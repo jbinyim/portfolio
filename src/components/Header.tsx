@@ -5,7 +5,11 @@ import { Link, useNavigate } from "react-router-dom";
 const Heading = styled.div`
   width: 100%;
   height: 80px;
+  background: #fff;
   border-bottom: 1px solid #000;
+  position: fixed;
+  top: 0;
+  left: 0;
 `;
 
 const Head = styled.div`
