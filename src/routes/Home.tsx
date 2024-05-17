@@ -3,6 +3,7 @@ import styled from "styled-components";
 import HomeTitle from "../components/HomeTitle";
 import AboutHome from "../components/AboutHome";
 import Slide from "../components/Slide";
+import { db } from "../db";
 
 const Container = styled.div`
   max-width: 1280px;
@@ -22,7 +23,11 @@ const Home = () => {
       </div>
       <div>
         <HomeTitle text="project" view="view more" />
-        <Slide />
+        <Slide db={db.project} />
+      </div>
+      <div>
+        <HomeTitle text="example" view="view more" />
+        <Slide db={db.example} />
       </div>
     </Container>
   );

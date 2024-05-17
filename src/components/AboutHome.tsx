@@ -7,7 +7,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 const Container = styled.div`
   max-width: 980px;
   height: 645px;
-  margin: 55px auto 0;
+  margin: 0 auto;
   display: flex;
   gap: 100px;
   border: 1px solid ${(props) => props.theme.textBgColor};

@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import SlideCard from "./SlideCard";
 
 const Container = styled.div``;
 
@@ -24,22 +25,34 @@ const responsive = {
   mobile: {
     breakpoint: { max: 464, min: 0 },
     items: 1,
+    slideToSlide: 1,
   },
 };
 
-const Slide = () => {
+interface DbData {
+  id: number;
+  name: string;
+  catagory: string;
+  skill: string[];
+  day: string;
+  func: string;
+  link: string;
+  github: string;
+  imgUrl: string;
+  text: string;
+}
+
+interface SlideProps {
+  db: DbData[];
+}
+
+const Slide = ({ db }: SlideProps) => {
   return (
     <Container>
       <Carousel responsive={responsive}>
-        <Sample>Item 1</Sample>
-        <div>Item 2</div>
-        <div>Item 3</div>
-        <div>Item 4</div>
-        <div>Item 4</div>
-        <div>Item 4</div>
-        <div>Item 4</div>
-        <div>Item 4</div>
-        <div>Item 4</div>
+        {db.map((item) => (
+          <SlideCard key={item.id} item={item} />
+        ))}
       </Carousel>
     </Container>
   );

@@ -8,6 +8,7 @@ const Heading = styled.div`
   background: #fff;
   border-bottom: 1px solid #000;
   position: fixed;
+  z-index: 10;
   top: 0;
   left: 0;
 `;

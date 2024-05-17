@@ -10,6 +10,7 @@ const Head = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 55px;
 `;
 
 const TitleBox = styled.span`
