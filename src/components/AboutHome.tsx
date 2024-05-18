@@ -38,6 +38,7 @@ const TextBox = styled.div`
 const SubHeading = styled.h3`
   font-size: 20px;
   margin-bottom: 55px;
+  text-transform: uppercase;
 `;
 
 const MainHeading = styled.h1`

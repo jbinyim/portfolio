@@ -4,13 +4,10 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import SlideCard from "./SlideCard";
 
-const Container = styled.div``;
-
-const Sample = styled.div`
-  width: 300px;
-  height: 400px;
-  background: url("https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-theventi-d1217-web-app-common-common-html-2024-05-17-01_07_19.png")
-    center/cover no-repeat;
+const Container = styled.div`
+  .react-multi-carousel-item {
+    margin-right: 5px;
+  }
 `;
 
 const responsive = {
@@ -25,7 +22,6 @@ const responsive = {
   mobile: {
     breakpoint: { max: 464, min: 0 },
     items: 1,
-    slideToSlide: 1,
   },
 };
 
@@ -35,7 +31,7 @@ interface DbData {
   catagory: string;
   skill: string[];
   day: string;
-  func: string;
+  func: string[];
   link: string;
   github: string;
   imgUrl: string;

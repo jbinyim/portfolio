@@ -5,6 +5,8 @@ import About from "./routes/About";
 import Project from "./routes/Project";
 import Example from "./routes/Example";
 import Header from "./components/Header";
+import Contact from "./routes/Contact";
+import Footer from "./components/Footer";
 
 const Router = () => {
   return (
@@ -15,7 +17,9 @@ const Router = () => {
         <Route path="/about" element={<About />} />
         <Route path="/project" element={<Project />} />
         <Route path="/example" element={<Example />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };

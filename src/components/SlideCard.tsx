@@ -10,7 +10,7 @@ const Container = styled.div<{ $imgUrl: string }>`
   &:hover {
     .infoBox {
       transition: all 0.3s;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.7);
       opacity: 1;
     }
   }
@@ -59,7 +59,7 @@ interface DbData {
   catagory: string;
   skill: string[];
   day: string;
-  func: string;
+  func: string[];
   link: string;
   github: string;
   imgUrl: string;
@@ -71,7 +71,6 @@ interface SlideProps {
 }
 
 const SlideCard = ({ item }: SlideProps) => {
-  console.log(item);
   return (
     <Container $imgUrl={item.imgUrl}>
       <ProjectInfoBox className="infoBox">
