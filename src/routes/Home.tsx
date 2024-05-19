@@ -14,6 +14,9 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 200px;
+  @media ${(props) => props.theme.tablet} {
+    padding: 10px;
+  }
 `;
 
 const Home = () => {

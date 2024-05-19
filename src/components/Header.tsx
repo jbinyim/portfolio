@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 
 const Heading = styled.div`
   width: 100%;
@@ -11,6 +13,9 @@ const Heading = styled.div`
   z-index: 10;
   top: 0;
   left: 0;
+  @media ${(props) => props.theme.tablet} {
+    padding: 30px;
+  }
 `;
 
 const Head = styled.div`
@@ -34,17 +39,61 @@ const Menu = styled.ul`
   display: flex;
   gap: 100px;
   margin-top: 15px;
+  @media ${(props) => props.theme.tablet} {
+    display: none;
+  }
 `;
 
 const MenuList = styled.li`
   font-size: 20px;
 `;
 
+const Bar = styled.div`
+  display: none;
+  .fa-bars {
+    font-size: 22px;
+    cursor: pointer;
+  }
+  @media ${(props) => props.theme.tablet} {
+    display: block;
+  }
+`;
+
+const MenuToggleBox = styled.div`
+  background: #fff;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 350px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  border-left: 1px solid #000;
+  display: none;
+`;
+
+const GoToBack = styled.div`
+  text-align: right;
+  margin: 50px 50px 0 0;
+  .fa-x {
+    font-size: 24px;
+    cursor: pointer;
+  }
+`;
+
+const MenuToggle = styled.ul``;
+
+const MenuToggleList = styled.li``;
+
 const Header = () => {
   const navigate = useNavigate();
   const onClickHome = () => {
     navigate("/");
   };
+
+  const onClickToggle = () => {};
+
   return (
     <Heading>
       <Head>
@@ -63,6 +112,28 @@ const Header = () => {
             <Link to={"/contact"}>Contact</Link>
           </MenuList>
         </Menu>
+        <Bar>
+          <FontAwesomeIcon icon={faBars} onClick={onClickToggle} />
+        </Bar>
+        <MenuToggleBox>
+          <GoToBack>
+            <FontAwesomeIcon icon={faX} />
+          </GoToBack>
+          <MenuToggle>
+            <MenuToggleList>
+              <Link to={"/about"}>About me</Link>
+            </MenuToggleList>
+            <MenuToggleList>
+              <Link to={"/project"}>Project</Link>
+            </MenuToggleList>
+            <MenuToggleList>
+              <Link to={"/example"}>Example</Link>
+            </MenuToggleList>
+            <MenuToggleList>
+              <Link to={"/contact"}>Contact</Link>
+            </MenuToggleList>
+          </MenuToggle>
+        </MenuToggleBox>
       </Head>
     </Heading>
   );
