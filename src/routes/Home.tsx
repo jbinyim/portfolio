@@ -14,8 +14,14 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 200px;
+  padding: 0 10px;
   @media ${(props) => props.theme.tablet} {
-    padding: 10px;
+    margin-top: 150px;
+    gap: 150px;
+  }
+  @media ${(props) => props.theme.mobile} {
+    margin-top: 100px;
+    gap: 100px;
   }
 `;
 

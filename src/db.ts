@@ -35,7 +35,7 @@ export const db = {
       skill: ["Html", "Css", "Javascript"],
       day: "2024-04-03 ~ 2024-04-05",
       func: ["filter"],
-      link: "",
+      link: "https://jb-findbooks.firebaseapp.com/",
       github:
         "https://github.com/jbinyim/vanilla-js-ex/tree/master/product%20filter",
       imgUrl: "https://placehold.co/600x400",

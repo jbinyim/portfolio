@@ -44,6 +44,9 @@ const Info = styled.p`
   &:last-child {
     border: none;
   }
+  @media ${(props) => props.theme.mobile} {
+    font-size: 10px;
+  }
 `;
 
 const Never = styled.p`

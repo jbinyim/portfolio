@@ -11,6 +11,12 @@ const Container = styled.div`
   display: flex;
   gap: 100px;
   border: 1px solid ${(props) => props.theme.textBgColor};
+  @media ${(props) => props.theme.tablet} {
+    max-width: 475px;
+    height: 745px;
+    flex-direction: column;
+    gap: 15px;
+  }
 `;
 
 const ImgBox = styled.div`
@@ -21,24 +27,40 @@ const ImgBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media ${(props) => props.theme.tablet} {
+    height: 350px;
+  }
 `;
 
 const Img = styled.img`
   max-width: 300px;
   height: 420px;
   object-fit: cover;
+  @media ${(props) => props.theme.tablet} {
+    height: 100%;
+  }
 `;
 
 const TextBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media ${(props) => props.theme.tablet} {
+    padding: 0 10px;
+  }
 `;
 
 const SubHeading = styled.h3`
   font-size: 20px;
   margin-bottom: 55px;
   text-transform: uppercase;
+  @media ${(props) => props.theme.tablet} {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+  @media ${(props) => props.theme.mobile} {
+    margin-bottom: 25px;
+  }
 `;
 
 const MainHeading = styled.h1`
@@ -46,11 +68,18 @@ const MainHeading = styled.h1`
   letter-spacing: -5px;
   font-weight: bold;
   margin-bottom: 85px;
+  @media ${(props) => props.theme.tablet} {
+    font-size: 36px;
+    margin-bottom: 50px;
+  }
 `;
 
 const OneLine = styled.p`
   font-size: 16px;
   margin-bottom: 90px;
+  @media ${(props) => props.theme.tablet} {
+    margin-bottom: 50px;
+  }
 `;
 
 const BtnBox = styled.div`

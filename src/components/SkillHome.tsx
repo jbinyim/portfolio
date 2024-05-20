@@ -12,6 +12,14 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
+  @media ${(props) => props.theme.tablet} {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media ${(props) => props.theme.mobile} {
+    grid-template-columns: repeat(1, 1fr);
+    border: none;
+    gap: 20px;
+  }
 `;
 
 const SkillHome = () => {

@@ -17,9 +17,19 @@ const Container = styled.div`
 
 const Title = styled.h1`
   font-size: 100px;
+  @media ${(props) => props.theme.tablet} {
+    font-size: 60px;
+  }
+  @media ${(props) => props.theme.mobile} {
+    font-size: 40px;
+  }
 `;
 
-const Text = styled.p``;
+const Text = styled.p`
+  @media ${(props) => props.theme.mobile} {
+    font-size: 14px;
+  }
+`;
 
 const Box = styled.div`
   display: flex;

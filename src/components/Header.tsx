@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const Heading = styled.div`
   width: 100%;
@@ -10,9 +10,10 @@ const Heading = styled.div`
   background: #fff;
   border-bottom: 1px solid #000;
   position: fixed;
-  z-index: 10;
+  z-index: 9999;
   top: 0;
   left: 0;
+  padding: 0 10px;
   @media ${(props) => props.theme.tablet} {
     padding: 30px;
   }
@@ -50,6 +51,7 @@ const MenuList = styled.li`
 
 const Bar = styled.div`
   display: none;
+  z-index: 11;
   .fa-bars {
     font-size: 22px;
     cursor: pointer;
@@ -66,33 +68,30 @@ const MenuToggleBox = styled.div`
   right: 0;
   width: 350px;
   height: 100vh;
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1);
+`;
+
+const MenuToggle = styled.ul`
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   gap: 50px;
-  border-left: 1px solid #000;
-  display: none;
 `;
 
-const GoToBack = styled.div`
-  text-align: right;
-  margin: 50px 50px 0 0;
-  .fa-x {
-    font-size: 24px;
-    cursor: pointer;
-  }
+const MenuToggleList = styled.li`
+  font-size: 24px;
 `;
-
-const MenuToggle = styled.ul``;
-
-const MenuToggleList = styled.li``;
 
 const Header = () => {
+  const [toggle, setToggle] = useState(true);
   const navigate = useNavigate();
   const onClickHome = () => {
     navigate("/");
   };
 
-  const onClickToggle = () => {};
+  const onClickToggle = () => {
+    setToggle((current) => !current);
+  };
 
   return (
     <Heading>
@@ -115,25 +114,26 @@ const Header = () => {
         <Bar>
           <FontAwesomeIcon icon={faBars} onClick={onClickToggle} />
         </Bar>
-        <MenuToggleBox>
-          <GoToBack>
-            <FontAwesomeIcon icon={faX} />
-          </GoToBack>
-          <MenuToggle>
-            <MenuToggleList>
-              <Link to={"/about"}>About me</Link>
-            </MenuToggleList>
-            <MenuToggleList>
-              <Link to={"/project"}>Project</Link>
-            </MenuToggleList>
-            <MenuToggleList>
-              <Link to={"/example"}>Example</Link>
-            </MenuToggleList>
-            <MenuToggleList>
-              <Link to={"/contact"}>Contact</Link>
-            </MenuToggleList>
-          </MenuToggle>
-        </MenuToggleBox>
+        {toggle ? (
+          ""
+        ) : (
+          <MenuToggleBox>
+            <MenuToggle>
+              <MenuToggleList>
+                <Link to={"/about"}>About me</Link>
+              </MenuToggleList>
+              <MenuToggleList>
+                <Link to={"/project"}>Project</Link>
+              </MenuToggleList>
+              <MenuToggleList>
+                <Link to={"/example"}>Example</Link>
+              </MenuToggleList>
+              <MenuToggleList>
+                <Link to={"/contact"}>Contact</Link>
+              </MenuToggleList>
+            </MenuToggle>
+          </MenuToggleBox>
+        )}
       </Head>
     </Heading>
   );

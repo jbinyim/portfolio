@@ -6,7 +6,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const Head = styled.div`
   max-width: 1280px;
-  height: 66px;
+  height: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,6 +22,12 @@ const TitleBox = styled.span`
 const Title = styled.h1`
   font-size: 42px;
   font-weight: bold;
+  @media ${(props) => props.theme.tablet} {
+    font-size: 36px;
+  }
+  @media ${(props) => props.theme.mobile} {
+    font-size: 30px;
+  }
 `;
 
 const MoveBtn = styled.span`

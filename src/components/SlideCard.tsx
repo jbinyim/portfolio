@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import Modal from "./Modal";
 
 const Container = styled.div<{ $imgUrl: string }>`
   background: url(${(props) => props.$imgUrl}) top/cover no-repeat;
@@ -9,6 +10,7 @@ const Container = styled.div<{ $imgUrl: string }>`
   border: 1px solid ${(props) => props.theme.imgBgColor};
   &:hover {
     .infoBox {
+      cursor: pointer;
       transition: all 0.3s;
       background: rgba(0, 0, 0, 0.7);
       opacity: 1;
@@ -25,6 +27,7 @@ const ProjectInfoBox = styled.div`
   justify-content: space-around;
   opacity: 0;
   a {
+    width: 110px;
     color: #fff;
     font-size: 20px;
     &:hover {
@@ -38,7 +41,14 @@ const InfoTitleBox = styled.span``;
 const Title = styled.h1`
   font-size: 42px;
   color: #fff;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
   margin-bottom: 20px;
+  p {
+    font-size: 16px;
+    margin-top: 32px;
+  }
 `;
 
 const SubTitleBox = styled.div`
@@ -71,11 +81,18 @@ interface SlideProps {
 }
 
 const SlideCard = ({ item }: SlideProps) => {
+  const [modal, setModal] = useState(false);
+  const onclickModal = () => {
+    setModal((current) => !current);
+    console.log(modal);
+  };
   return (
-    <Container $imgUrl={item.imgUrl}>
+    <Container $imgUrl={item.imgUrl} onClick={onclickModal}>
       <ProjectInfoBox className="infoBox">
         <InfoTitleBox>
-          <Title>{item.name}</Title>
+          <Title>
+            {item.name} <p>({item.catagory})</p>
+          </Title>
           <SubTitleBox>
             {item.skill.map((s, idx) => (
               <p key={idx}>{s}</p>
@@ -86,6 +103,7 @@ const SlideCard = ({ item }: SlideProps) => {
           Project URL
         </Link>
       </ProjectInfoBox>
+      {modal ? "" : <Modal />}
     </Container>
   );
 };
