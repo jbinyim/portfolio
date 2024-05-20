@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Modal from "./Modal";
@@ -78,13 +78,14 @@ interface DbData {
 
 interface SlideProps {
   item: DbData;
+  setModal: Dispatch<SetStateAction<boolean>>;
+  setModalItem: Dispatch<SetStateAction<object>>;
 }
 
-const SlideCard = ({ item }: SlideProps) => {
-  const [modal, setModal] = useState(false);
+const SlideCard = ({ item, setModal, setModalItem }: SlideProps) => {
   const onclickModal = () => {
+    setModalItem(item);
     setModal((current) => !current);
-    console.log(modal);
   };
   return (
     <Container $imgUrl={item.imgUrl} onClick={onclickModal}>
@@ -103,7 +104,6 @@ const SlideCard = ({ item }: SlideProps) => {
           Project URL
         </Link>
       </ProjectInfoBox>
-      {modal ? "" : <Modal />}
     </Container>
   );
 };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import styled from "styled-components";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -40,14 +40,21 @@ interface DbData {
 
 interface SlideProps {
   db: DbData[];
+  setModal: Dispatch<SetStateAction<boolean>>;
+  setModalItem: Dispatch<SetStateAction<object>>;
 }
 
-const Slide = ({ db }: SlideProps) => {
+const Slide = ({ db, setModal, setModalItem }: SlideProps) => {
   return (
     <Container>
       <Carousel responsive={responsive}>
         {db.map((item) => (
-          <SlideCard key={item.id} item={item} />
+          <SlideCard
+            key={item.id}
+            item={item}
+            setModal={setModal}
+            setModalItem={setModalItem}
+          />
         ))}
       </Carousel>
     </Container>

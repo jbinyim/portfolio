@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import HomeTitle from "../components/HomeTitle";
 import AboutHome from "../components/AboutHome";
@@ -6,6 +6,7 @@ import Slide from "../components/Slide";
 import SkillHome from "../components/SkillHome";
 import Contact from "./Contact";
 import { db } from "../db";
+import Modal from "../components/Modal";
 
 const Container = styled.div`
   max-width: 1280px;
@@ -26,6 +27,8 @@ const Container = styled.div`
 `;
 
 const Home = () => {
+  const [modal, setModal] = useState(false);
+  const [modalItem, setModalItem] = useState({});
   return (
     <Container>
       <div>
@@ -34,12 +37,21 @@ const Home = () => {
       </div>
       <div>
         <HomeTitle text="project" view="view more" />
-        <Slide db={db.project} />
+        <Slide
+          db={db.project}
+          setModal={setModal}
+          setModalItem={setModalItem}
+        />
       </div>
       <div>
         <HomeTitle text="example" view="view more" />
-        <Slide db={db.example} />
+        <Slide
+          db={db.example}
+          setModal={setModal}
+          setModalItem={setModalItem}
+        />
       </div>
+      {modal ? <Modal setModal={setModal} modalItem={modalItem} /> : ""}
       <div>
         <HomeTitle text="skill" />
         <SkillHome />
