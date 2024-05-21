@@ -8,11 +8,12 @@ const Container = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
+  z-index: 9998;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.6);
 `;
 
 const ModalBox = styled.div`
@@ -21,9 +22,55 @@ const ModalBox = styled.div`
   background: #fff;
   margin-top: 100px;
   overflow-y: scroll;
+  z-index: 9999;
   .fa-x {
     cursor: pointer;
   }
+`;
+
+const CloseBox = styled.div`
+  text-align: right;
+  margin: 20px 50px 0 0;
+  .fa-x {
+    font-size: 24px;
+  }
+`;
+
+const ContentBox = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+`;
+const ImgBox = styled.div`
+  width: 450px;
+  height: 100%;
+  background: ${(props) => props.theme.imgBgColor};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+`;
+
+const Img = styled.div<{ $imgUrl: string | undefined }>`
+  background: url(${(props) => props.$imgUrl}) top/cover no-repeat;
+  width: 100%;
+  height: 100%;
+`;
+
+const TextBox = styled.div`
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* border: 1px solid #000; */
+`;
+
+const SkillBox = styled.div`
+  display: flex;
+  gap: 10px;
 `;
 
 interface DbData {
@@ -45,32 +92,39 @@ interface ModalProps {
 }
 
 const Modal = ({ setModal, modalItem }: ModalProps) => {
+  console.log(modalItem.imgUrl);
   const onclickModal = () => {
     setModal((current) => !current);
   };
   return (
     <Container>
       <ModalBox>
-        <FontAwesomeIcon icon={faX} onClick={onclickModal} />
-        <div>
-          <span></span>
-        </div>
-        <div>
-          <h1>{modalItem.name}</h1>
-          <p>{modalItem.catagory}프로젝트</p>
-          <p>{modalItem.day}</p>
-          <div>
-            {modalItem.skill?.map((item, idx) => (
-              <p key={idx}>{item}</p>
-            ))}
-          </div>
-          <div>
-            {modalItem.func?.map((item, idx) => (
-              <p key={idx}>{item}</p>
-            ))}
-          </div>
-          <p></p>
-        </div>
+        <CloseBox>
+          <FontAwesomeIcon icon={faX} onClick={onclickModal} />
+        </CloseBox>
+        <ContentBox>
+          <ImgBox>
+            <Img $imgUrl={modalItem.imgUrl} />
+          </ImgBox>
+          <TextBox>
+            <h1>{modalItem.name}</h1>
+            <p>{modalItem.catagory}프로젝트</p>
+            <p>작업기간 : {modalItem.day}</p>
+            <SkillBox>
+              주요기술 :
+              {modalItem.skill?.map((item, idx) => (
+                <p key={idx}>{item}</p>
+              ))}
+            </SkillBox>
+            <SkillBox>
+              상세기술 :
+              {modalItem.func?.map((item, idx) => (
+                <p key={idx}>{item}</p>
+              ))}
+            </SkillBox>
+            <p>상세설명 : {modalItem.text}</p>
+          </TextBox>
+        </ContentBox>
       </ModalBox>
     </Container>
   );

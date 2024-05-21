@@ -73,7 +73,7 @@ export const db = {
       catagory: "개인",
       skill: ["react"],
       day: "2024-04-18 ~ 2024-04-23",
-      func: ["async, await"],
+      func: ["async", "await"],
       link: "https://finedust-7ea20.web.app/",
       github: "https://github.com/jbinyim/react-ex/tree/master/finedust",
       imgUrl:
