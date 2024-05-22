@@ -92,7 +92,6 @@ interface ModalProps {
 }
 
 const Modal = ({ setModal, modalItem }: ModalProps) => {
-  console.log(modalItem.imgUrl);
   const onclickModal = () => {
     setModal((current) => !current);
   };

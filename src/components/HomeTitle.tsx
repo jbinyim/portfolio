@@ -16,7 +16,12 @@ const Head = styled.div`
 const TitleBox = styled.span`
   display: inline-block;
   height: 100%;
+  padding-bottom: 60px;
   border-bottom: 1px solid #000;
+  @media ${(props) => props.theme.mobile} {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
 `;
 
 const Title = styled.h1`

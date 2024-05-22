@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import SlideCard from "./SlideCard";
+import { DbData } from "../db";
 
 const Container = styled.div`
   .react-multi-carousel-item {
@@ -24,19 +25,6 @@ const responsive = {
     items: 1,
   },
 };
-
-interface DbData {
-  id: number;
-  name: string;
-  catagory: string;
-  skill: string[];
-  day: string;
-  func: string[];
-  link: string;
-  github: string;
-  imgUrl: string;
-  text: string;
-}
 
 interface SlideProps {
   db: DbData[];

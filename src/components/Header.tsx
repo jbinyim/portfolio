@@ -39,7 +39,8 @@ const Logo = styled.div`
 const Menu = styled.ul`
   display: flex;
   gap: 100px;
-  margin-top: 15px;
+  margin: 0;
+  padding: 0;
   @media ${(props) => props.theme.tablet} {
     display: none;
   }

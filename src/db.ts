@@ -110,3 +110,16 @@ export const skillLogo = {
   illustrator: "https://jbinyim12.cafe24.com/web/upload/captcha/image%204.png",
   photoshop: "https://jbinyim12.cafe24.com/web/upload/captcha/image%205.png",
 };
+
+export interface DbData {
+  id: number;
+  name: string;
+  catagory: string;
+  skill: string[];
+  day: string;
+  func: string[];
+  link: string;
+  github: string;
+  imgUrl: string;
+  text: string;
+}

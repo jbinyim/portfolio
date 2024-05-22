@@ -1,7 +1,7 @@
-import React, { Dispatch, SetStateAction, useState } from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import Modal from "./Modal";
+import { DbData } from "../db";
 
 const Container = styled.div<{ $imgUrl: string }>`
   background: url(${(props) => props.$imgUrl}) top/cover no-repeat;
@@ -62,19 +62,6 @@ const SubTitleBox = styled.div`
     padding: 0 5px;
   }
 `;
-
-interface DbData {
-  id: number;
-  name: string;
-  catagory: string;
-  skill: string[];
-  day: string;
-  func: string[];
-  link: string;
-  github: string;
-  imgUrl: string;
-  text: string;
-}
 
 interface SlideProps {
   item: DbData;
