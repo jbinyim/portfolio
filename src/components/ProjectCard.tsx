@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
@@ -9,15 +9,35 @@ import { DbData } from "../db";
 const Container = styled.div`
   width: 100%;
   height: 500px;
+  box-shadow: 2px 2px 1px #d9d9d9;
+  border-radius: 10px;
   border: 1px solid ${(props) => props.theme.imgBgColor};
   display: flex;
   gap: 60px;
   margin-bottom: 100px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s;
+  &:hover {
+    .see {
+      top: -30px;
+      opacity: 1;
+    }
+  }
+  .see {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    color: #f00;
+    transition: all 0.3s;
+  }
 `;
 
 const ImgBox = styled.div`
   width: 600px;
   height: 100%;
+  border-radius: 10px;
   background: ${(props) => props.theme.imgBgColor};
   text-align: center;
 `;
@@ -46,6 +66,7 @@ const TextTop = styled.span`
     border: 1px solid #000;
     border-radius: 50px;
     margin: 0;
+    margin-right: 10px;
     padding: 0 10px;
   }
 `;
@@ -64,37 +85,53 @@ const LinkTo = styled.div`
   .svg-inline--fa {
     margin-top: 5px;
   }
-  a:hover {
-    cursor: pointer;
-    text-decoration: underline;
+  a {
+    font-size: 20px;
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
   }
 `;
 
 interface ProjectCardProps {
   item: DbData;
+  setModal: Dispatch<SetStateAction<boolean>>;
+  setModalItem: Dispatch<SetStateAction<object>>;
 }
 
-const ProjectCard = ({ item }: ProjectCardProps) => {
+const ProjectCard = ({ item, setModal, setModalItem }: ProjectCardProps) => {
+  const onClickCard = () => {
+    setModalItem(item);
+    setModal(true);
+  };
   return (
-    <Container>
+    <Container onClick={onClickCard}>
+      <p className="see">카드를 누르시면 자세한 정보를 확인할 수 있습니다.</p>
       <ImgBox>
         <Img src={item.imgUrl} alt="img" />
       </ImgBox>
       <TextBox>
         <TextTop>
           <h3>{item.name}</h3>
-          <p>{item.skill}</p>
+          {item.skill.map((item, idx) => (
+            <p key={idx}>{item}</p>
+          ))}
         </TextTop>
         <TextBottom>
           <LinkTo>
             <FontAwesomeIcon icon={faLink} />
             <p>project URL :</p>
-            <Link to={"/naver.com"}>https://naver.com</Link>
+            <Link to={item.link} target="blank">
+              {item.link}
+            </Link>
           </LinkTo>
           <LinkTo>
             <FontAwesomeIcon icon={faGithub} />
             <p>Github URL :</p>
-            <Link to={"https://naver.com"}>z</Link>
+            <Link to={item.github} target="blank">
+              {item.github.slice(0, 26)}...
+            </Link>
           </LinkTo>
         </TextBottom>
       </TextBox>
