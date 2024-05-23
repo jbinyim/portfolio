@@ -9,12 +9,28 @@ const Contaier = styled.div`
   gap: 75px;
   margin-bottom: 100px;
   h1 {
-    font-size: 100px;
+    font-size: 90px;
     text-transform: uppercase;
   }
   p {
     font-size: 20px;
     color: ${(props) => props.theme.imgBgColor};
+  }
+  @media ${(props) => props.theme.tablet} {
+    margin-bottom: 80px;
+    h1 {
+      font-size: 60px;
+    }
+  }
+  @media ${(props) => props.theme.mobile} {
+    gap: 50px;
+    margin-bottom: 70px;
+    h1 {
+      font-size: 30px;
+    }
+    p {
+      font-size: 15px;
+    }
   }
 `;
 

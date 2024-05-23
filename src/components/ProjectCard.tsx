@@ -32,6 +32,20 @@ const Container = styled.div`
     color: #f00;
     transition: all 0.3s;
   }
+  @media ${(props) => props.theme.tablet} {
+    flex-direction: column;
+    width: 578px;
+    height: 780px;
+    margin: 0 auto 50px;
+    padding: 10px;
+  }
+  @media ${(props) => props.theme.mobile} {
+    width: 320px;
+    height: 750px;
+    .see {
+      font-size: 15px;
+    }
+  }
 `;
 
 const ImgBox = styled.div`
@@ -40,17 +54,35 @@ const ImgBox = styled.div`
   border-radius: 10px;
   background: ${(props) => props.theme.imgBgColor};
   text-align: center;
+  @media ${(props) => props.theme.tablet} {
+    max-width: 450px;
+    height: 400px;
+    margin: 0 auto;
+  }
+  @media ${(props) => props.theme.mobile} {
+    max-width: 300px;
+    height: 350px;
+  }
 `;
 const Img = styled.img`
   max-width: 600px;
   height: 100%;
   object-fit: contain;
+  @media ${(props) => props.theme.tablet} {
+    max-width: 100%;
+  }
 `;
 
 const TextBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  @media ${(props) => props.theme.tablet} {
+    gap: 90px;
+  }
+  @media ${(props) => props.theme.mobile} {
+    gap: 80px;
+  }
 `;
 
 const TextTop = styled.span`
@@ -68,6 +100,11 @@ const TextTop = styled.span`
     margin: 0;
     margin-right: 10px;
     padding: 0 10px;
+  }
+  @media ${(props) => props.theme.tablet} {
+    h3 {
+      font-size: 30px;
+    }
   }
 `;
 
@@ -87,9 +124,15 @@ const LinkTo = styled.div`
   }
   a {
     font-size: 20px;
-    &:hover {
-      cursor: pointer;
-      text-decoration: underline;
+  }
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  @media ${(props) => props.theme.tablet} {
+    font-size: 20px;
+    a {
+      display: none;
     }
   }
 `;
@@ -121,16 +164,16 @@ const ProjectCard = ({ item, setModal, setModalItem }: ProjectCardProps) => {
         <TextBottom>
           <LinkTo>
             <FontAwesomeIcon icon={faLink} />
-            <p>project URL :</p>
+            <p>project URL</p>
             <Link to={item.link} target="blank">
-              {item.link}
+              - {item.link}
             </Link>
           </LinkTo>
           <LinkTo>
             <FontAwesomeIcon icon={faGithub} />
-            <p>Github URL :</p>
+            <p>Github URL </p>
             <Link to={item.github} target="blank">
-              {item.github.slice(0, 26)}...
+              - {item.github.slice(0, 26)}...
             </Link>
           </LinkTo>
         </TextBottom>

@@ -9,6 +9,7 @@ const Container = styled.div`
   max-width: 1280px;
   height: 100%;
   margin: 180px auto 0;
+  padding: 10px;
 `;
 
 const Project = () => {
