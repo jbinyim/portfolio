@@ -4,7 +4,7 @@ export const db = {
       id: 240229,
       name: "더 벤티",
       catagory: "팀",
-      skill: ["Html", "Css", "Javascript"],
+      skill: ["Html", "Css", "javascript"],
       day: "2024-02-29 ~ 2024-03-29",
       func: ["클론코딩"],
       link: "https://theventi-d1217.firebaseapp.com",
@@ -30,9 +30,10 @@ export const db = {
   example: [
     {
       id: 240403,
+      type: "javascript",
       name: "도서문고",
       catagory: "개인",
-      skill: ["Html", "Css", "Javascript"],
+      skill: ["Html", "Css", "javascript"],
       day: "2024-04-03 ~ 2024-04-05",
       func: ["filter"],
       link: "https://jb-findbooks.firebaseapp.com/",
@@ -43,9 +44,10 @@ export const db = {
     },
     {
       id: 240408,
+      type: "javascript",
       name: "JS-todoList",
       catagory: "개인",
-      skill: ["Html", "Css", "Javascript"],
+      skill: ["Html", "Css", "javascript"],
       day: "2024-04-08 ~ 2024-04-09",
       func: ["예제"],
       link: "https://jb-memo.firebaseapp.com/",
@@ -56,9 +58,10 @@ export const db = {
     },
     {
       id: 240411,
+      type: "javascript",
       name: "전국 날씨",
       catagory: "개인",
-      skill: ["Html", "Css", "Javascript"],
+      skill: ["Html", "Css", "javascript"],
       day: "2024-04-11 ~ 2024-04-15",
       func: ["예제"],
       link: "https://jb-weather-8fc73.firebaseapp.com/",
@@ -69,6 +72,7 @@ export const db = {
     },
     {
       id: 240418,
+      type: "react",
       name: "미세먼지",
       catagory: "개인",
       skill: ["react"],
@@ -82,6 +86,7 @@ export const db = {
     },
     {
       id: 240416,
+      type: "react",
       name: "react-todoList",
       catagory: "개인",
       skill: ["react"],
@@ -113,6 +118,7 @@ export const skillLogo = {
 
 export interface DbData {
   id: number;
+  type?: string;
   name: string;
   catagory: string;
   skill: string[];
