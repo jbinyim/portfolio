@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import styled from "styled-components";
 import { DbData } from "../db";
 import { Link } from "react-router-dom";
@@ -9,7 +9,8 @@ const Container = styled.div`
   height: 360px;
   border: 1px solid #000;
   border-radius: 10px;
-  margin-bottom: 65px;
+  margin: 50px auto 15px;
+  cursor: pointer;
 `;
 
 const ImgBox = styled.div`
@@ -37,7 +38,10 @@ const Title = styled.h2`
 
 const ListBox = styled.ul`
   /* padding: 0; */
+  height: 48px;
   margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 `;
 
 const List = styled.li`
@@ -50,34 +54,54 @@ const URLBox = styled.div`
   align-items: center;
   gap: 15px;
   a {
-    padding: 10px;
+    padding: 7px 10px;
     border: none;
     border-radius: 10px;
     color: #fff;
     font-size: 18px;
+    border: 1px solid transparent;
     background: ${(props) => props.theme.textBgColor};
+    transition: all 0.3s;
+    &:first-child:hover {
+      color: ${(props) => props.theme.textBgColor};
+      border: 1px solid ${(props) => props.theme.imgBgColor};
+      background: #fff;
+    }
     &:last-child {
       background: ${(props) => props.theme.imgBgColor};
+      &:hover {
+        color: ${(props) => props.theme.textBgColor};
+        border: 1px solid ${(props) => props.theme.textBgColor};
+        background: #fff;
+      }
     }
   }
 `;
 
 interface ExampleCardProps {
-  item?: DbData;
+  item: DbData;
+  setModal: Dispatch<SetStateAction<boolean>>;
+  setModalItem: Dispatch<SetStateAction<object>>;
 }
 
-const ExampleCard = ({ item }: ExampleCardProps) => {
+const ExampleCard = ({ item, setModal, setModalItem }: ExampleCardProps) => {
+  const onClickCard = () => {
+    setModal(true);
+    setModalItem(item);
+  };
+
   if (item) {
     return (
-      <Container>
+      <Container onClick={onClickCard}>
         <ImgBox>
           <Img src={item.imgUrl} alt="logo" />
         </ImgBox>
         <TextBox>
           <Title>{item.name}</Title>
           <ListBox>
-            <List>설명</List>
-            <List>설명</List>
+            {item.func.map((item) => (
+              <List>{item}</List>
+            ))}
           </ListBox>
           <URLBox>
             <Link to={item.link} target="blank">

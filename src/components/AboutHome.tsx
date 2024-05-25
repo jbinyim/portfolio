@@ -75,6 +75,7 @@ const MainHeading = styled.h1`
 `;
 
 const OneLine = styled.p`
+  max-width: 350px;
   font-size: 16px;
   margin-bottom: 90px;
   @media ${(props) => props.theme.tablet} {
@@ -116,7 +117,8 @@ const AboutHome = () => {
           <br /> 임정빈입니다.
         </MainHeading>
         <OneLine>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          최신 웹 기술을 빠르게 배우며 사용자 친화적인 웹사이트를 만드는 꿈을
+          키우는 중 입니다.
         </OneLine>
         <BtnBox>
           <Link to={"/about"}>Read Now</Link>

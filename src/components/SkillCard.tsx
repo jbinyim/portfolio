@@ -3,11 +3,17 @@ import styled from "styled-components";
 
 const Container = styled.div`
   max-width: 300px;
-  height: 190px;
+  height: 280px;
   box-shadow: 2px 2px 1px #d9d9d9;
   border: 1px solid #d9d9d9;
   border-radius: 10px;
   margin: 0 auto;
+  @media ${(props) => props.theme.tablet} {
+    height: 300px;
+  }
+  @media ${(props) => props.theme.mobile} {
+    height: 220px;
+  }
 `;
 
 const SkillBox = styled.div`
@@ -38,15 +44,23 @@ const Title = styled.h2`
 
 const Text = styled.p`
   font-size: 15px;
+  letter-spacing: -1px;
+  @media (max-width: 800px) {
+    font-size: 14px;
+  }
+  @media (max-width: 650px) {
+    font-size: 13px;
+  }
 `;
 
 interface SkillLogoParam {
-  skillLogo?: string;
+  skillLogo: string;
   chLogo?: string;
   title?: string;
+  text: string;
 }
 
-const SkillCard = ({ skillLogo = "", chLogo = "", title }: SkillLogoParam) => {
+const SkillCard = ({ skillLogo, chLogo, title, text }: SkillLogoParam) => {
   return (
     <Container>
       <SkillBox>
@@ -55,12 +69,7 @@ const SkillCard = ({ skillLogo = "", chLogo = "", title }: SkillLogoParam) => {
           {chLogo ? <Img $skillLogo={chLogo} /> : ""}
           <Title>{title}</Title>
         </TitleBox>
-        <Text>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-          necessitatibus facere rem quasi facilis porro commodi vero sunt
-          asperiores dolorum deserunt provident vel aliquid adipisci eligendi
-          modi, dolor odit pariatur!
-        </Text>
+        <Text>{text}</Text>
       </SkillBox>
     </Container>
   );

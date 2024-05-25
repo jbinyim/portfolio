@@ -78,10 +78,10 @@ const TextBox = styled.div`
   flex-direction: column;
   justify-content: space-around;
   @media ${(props) => props.theme.tablet} {
-    gap: 90px;
+    gap: 40px;
   }
   @media ${(props) => props.theme.mobile} {
-    gap: 80px;
+    gap: 50px;
   }
 `;
 
@@ -108,6 +108,12 @@ const TextTop = styled.span`
   }
 `;
 
+const TextMiddle = styled.div``;
+
+const MiddleList = styled.li`
+  list-style: circle;
+`;
+
 const TextBottom = styled.span``;
 
 const LinkTo = styled.div`
@@ -124,10 +130,14 @@ const LinkTo = styled.div`
   }
   a {
     font-size: 20px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid transparent;
+    &:hover {
+      border-bottom: 1px solid #000;
+    }
   }
   &:hover {
     cursor: pointer;
-    text-decoration: underline;
   }
   @media ${(props) => props.theme.tablet} {
     font-size: 20px;
@@ -161,6 +171,13 @@ const ProjectCard = ({ item, setModal, setModalItem }: ProjectCardProps) => {
             <p key={idx}>{item}</p>
           ))}
         </TextTop>
+        <TextMiddle>
+          <ul>
+            {item.func.map((it) => (
+              <MiddleList>{it}</MiddleList>
+            ))}
+          </ul>
+        </TextMiddle>
         <TextBottom>
           <LinkTo>
             <FontAwesomeIcon icon={faLink} />

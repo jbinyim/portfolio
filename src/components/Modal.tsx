@@ -18,13 +18,17 @@ const Container = styled.div`
 
 const ModalBox = styled.div`
   width: 1280px;
-  height: 800px;
+  height: 90vh;
   background: #fff;
   margin-top: 100px;
   overflow-y: scroll;
   z-index: 9999;
   .fa-x {
     cursor: pointer;
+  }
+  @media ${(props) => props.theme.mobile} {
+    margin-top: 160px;
+    height: 100%;
   }
 `;
 
@@ -34,6 +38,10 @@ const CloseBox = styled.div`
   .fa-x {
     font-size: 24px;
   }
+  @media ${(props) => props.theme.mobile} {
+    text-align: left;
+    margin-left: 20px;
+  }
 `;
 
 const ContentBox = styled.div`
@@ -42,16 +50,26 @@ const ContentBox = styled.div`
   display: flex;
   justify-content: center;
   gap: 100px;
+  padding: 10px;
+  @media ${(props) => props.theme.mobile} {
+    flex-direction: column;
+    gap: 10px;
+    padding: 7px;
+  }
 `;
+
 const ImgBox = styled.div`
   width: 450px;
-  height: 100%;
+  min-height: 350px;
   background: ${(props) => props.theme.imgBgColor};
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
   border-radius: 10px;
+  @media ${(props) => props.theme.mobile} {
+    width: 350px;
+  }
 `;
 
 const Img = styled.div<{ $imgUrl: string | undefined }>`
@@ -62,10 +80,17 @@ const Img = styled.div<{ $imgUrl: string | undefined }>`
 
 const TextBox = styled.div`
   width: 400px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 20px;
   /* border: 1px solid #000; */
+  @media ${(props) => props.theme.mobile} {
+    gap: 5px;
+  }
+  p:last-child {
+    max-width: 340px;
+  }
 `;
 
 const SkillBox = styled.div`

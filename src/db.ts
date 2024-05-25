@@ -35,11 +35,12 @@ export const db = {
       catagory: "개인",
       skill: ["Html", "Css", "javascript"],
       day: "2024-04-03 ~ 2024-04-05",
-      func: ["filter"],
+      func: ["filter", "sort"],
       link: "https://jb-findbooks.firebaseapp.com/",
       github:
         "https://github.com/jbinyim/vanilla-js-ex/tree/master/product%20filter",
-      imgUrl: "https://placehold.co/600x400",
+      imgUrl:
+        "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-jb-findbooks-firebaseapp-2024-05-24-20_54_41.png",
       text: "",
     },
     {
@@ -63,7 +64,7 @@ export const db = {
       catagory: "개인",
       skill: ["Html", "Css", "javascript"],
       day: "2024-04-11 ~ 2024-04-15",
-      func: ["예제"],
+      func: ["fetch", "api"],
       link: "https://jb-weather-8fc73.firebaseapp.com/",
       github: "https://github.com/jbinyim/vanilla-js-ex/tree/master/weather",
       imgUrl:
@@ -77,7 +78,7 @@ export const db = {
       catagory: "개인",
       skill: ["react"],
       day: "2024-04-18 ~ 2024-04-23",
-      func: ["async", "await"],
+      func: ["async", "await", "api"],
       link: "https://finedust-7ea20.web.app/",
       github: "https://github.com/jbinyim/react-ex/tree/master/finedust",
       imgUrl:
