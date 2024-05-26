@@ -34,16 +34,23 @@ const Container = styled.div`
   }
   @media ${(props) => props.theme.tablet} {
     flex-direction: column;
+    /* gap 0 */
+    gap: 30px;
     width: 578px;
-    height: 780px;
+    height: auto;
     margin: 0 auto 50px;
     padding: 10px;
+    .see {
+      opacity: 1;
+      top: -30px;
+    }
   }
   @media ${(props) => props.theme.mobile} {
     width: 320px;
-    height: 750px;
+    height: auto;
     .see {
-      font-size: 15px;
+      font-size: 14px;
+      letter-spacing: -1px;
     }
   }
 `;
@@ -78,7 +85,7 @@ const TextBox = styled.div`
   flex-direction: column;
   justify-content: space-around;
   @media ${(props) => props.theme.tablet} {
-    gap: 40px;
+    gap: 20px;
   }
   @media ${(props) => props.theme.mobile} {
     gap: 50px;
@@ -112,6 +119,7 @@ const TextMiddle = styled.div``;
 
 const MiddleList = styled.li`
   list-style: circle;
+  max-width: 500px;
 `;
 
 const TextBottom = styled.span``;
@@ -173,8 +181,8 @@ const ProjectCard = ({ item, setModal, setModalItem }: ProjectCardProps) => {
         </TextTop>
         <TextMiddle>
           <ul>
-            {item.func.map((it) => (
-              <MiddleList>{it}</MiddleList>
+            {item.func.map((it, idx) => (
+              <MiddleList key={idx}>{it}</MiddleList>
             ))}
           </ul>
         </TextMiddle>

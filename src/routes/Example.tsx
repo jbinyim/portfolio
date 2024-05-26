@@ -64,6 +64,10 @@ const CardBox = styled.div`
 
   @media ${(props) => props.theme.moreTablet} {
     grid-template-columns: repeat(2, 1fr);
+    .see {
+      opacity: 1;
+      top: 0;
+    }
   }
   @media ${(props) => props.theme.mobile} {
     grid-template-columns: repeat(1, 1fr);
@@ -101,7 +105,7 @@ const Example = () => {
         </Menu>
       </MenuBox>
       <CardBox>
-        <p>카드를 누르시면 자세한 정보를 확인할 수 있습니다.</p>
+        <p className="see">카드를 누르시면 자세한 정보를 확인할 수 있습니다.</p>
         <ExampleCardBox
           setModal={setModal}
           setModalItem={setModalItem}

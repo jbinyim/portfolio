@@ -29,10 +29,10 @@ const Head = styled.div`
 `;
 
 const Logo = styled.div`
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   cursor: pointer;
-  background: url("https://yimjbin-26a95.web.app/img/logo/bLogo.png")
+  background: url("https://jbinyim12.cafe24.com/web/upload/captcha/logo.png")
     center/cover no-repeat;
 `;
 

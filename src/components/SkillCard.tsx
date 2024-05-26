@@ -3,17 +3,11 @@ import styled from "styled-components";
 
 const Container = styled.div`
   max-width: 300px;
-  height: 280px;
+  height: 100%;
   box-shadow: 2px 2px 1px #d9d9d9;
   border: 1px solid #d9d9d9;
   border-radius: 10px;
   margin: 0 auto;
-  @media ${(props) => props.theme.tablet} {
-    height: 300px;
-  }
-  @media ${(props) => props.theme.mobile} {
-    height: 220px;
-  }
 `;
 
 const SkillBox = styled.div`

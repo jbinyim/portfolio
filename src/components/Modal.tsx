@@ -17,50 +17,53 @@ const Container = styled.div`
 `;
 
 const ModalBox = styled.div`
-  width: 1280px;
-  height: 90vh;
+  width: 90%;
+  max-width: 1280px;
+  height: auto;
+  max-height: 90%;
+  margin-top: 50px;
   background: #fff;
-  margin-top: 100px;
-  overflow-y: scroll;
+  border-radius: 10px;
+  padding: 20px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 9999;
-  .fa-x {
-    cursor: pointer;
-  }
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
   @media ${(props) => props.theme.mobile} {
-    margin-top: 160px;
-    height: 100%;
+    margin-top: 70px;
+    width: 95%;
+    height: auto;
+    padding: 15px;
   }
 `;
 
 const CloseBox = styled.div`
   text-align: right;
-  margin: 20px 50px 0 0;
   .fa-x {
+    cursor: pointer;
     font-size: 24px;
   }
-  @media ${(props) => props.theme.mobile} {
-    text-align: left;
-    margin-left: 20px;
-  }
+  margin-bottom: 20px; // 모달 내용과 닫기 버튼 사이 간격 조정
 `;
 
 const ContentBox = styled.div`
-  width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
-  gap: 100px;
-  padding: 10px;
+  gap: 20px;
   @media ${(props) => props.theme.mobile} {
     flex-direction: column;
-    gap: 10px;
-    padding: 7px;
+    align-items: center;
+    gap: 15px;
   }
 `;
 
 const ImgBox = styled.div`
-  width: 450px;
-  min-height: 350px;
+  flex: 1;
+  min-height: 500px;
   background: ${(props) => props.theme.imgBgColor};
   display: flex;
   justify-content: center;
@@ -68,7 +71,8 @@ const ImgBox = styled.div`
   padding: 10px;
   border-radius: 10px;
   @media ${(props) => props.theme.mobile} {
-    width: 350px;
+    width: 100%;
+    min-height: 250px;
   }
 `;
 
@@ -76,26 +80,37 @@ const Img = styled.div<{ $imgUrl: string | undefined }>`
   background: url(${(props) => props.$imgUrl}) top/cover no-repeat;
   width: 100%;
   height: 100%;
+  @media ${(props) => props.theme.mobile} {
+    width: 100%;
+    height: 250px;
+  }
 `;
 
 const TextBox = styled.div`
-  width: 400px;
-  height: 100%;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  /* border: 1px solid #000; */
+  gap: 10px;
   @media ${(props) => props.theme.mobile} {
-    gap: 5px;
+    width: 100%;
   }
-  p:last-child {
-    max-width: 340px;
-  }
+`;
+
+const MainSkill = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 `;
 
 const SkillBox = styled.div`
   display: flex;
+  flex-direction: column;
   gap: 10px;
+`;
+
+const Subtitle = styled.span`
+  font-size: 20px;
+  font-weight: bold;
 `;
 
 interface DbData {
@@ -133,20 +148,26 @@ const Modal = ({ setModal, modalItem }: ModalProps) => {
           <TextBox>
             <h1>{modalItem.name}</h1>
             <p>{modalItem.catagory}프로젝트</p>
-            <p>작업기간 : {modalItem.day}</p>
-            <SkillBox>
-              주요기술 :
+            <p>
+              <Subtitle>작업기간</Subtitle> : {modalItem.day}
+            </p>
+            <MainSkill>
+              <Subtitle>주요기술</Subtitle> :
               {modalItem.skill?.map((item, idx) => (
-                <p key={idx}>{item}</p>
+                <p key={idx}>{item},</p>
               ))}
-            </SkillBox>
+            </MainSkill>
             <SkillBox>
-              상세기술 :
+              <span>
+                <Subtitle>상세기술</Subtitle> :
+              </span>
               {modalItem.func?.map((item, idx) => (
                 <p key={idx}>{item}</p>
               ))}
             </SkillBox>
-            <p>상세설명 : {modalItem.text}</p>
+            <p>
+              <Subtitle>개발이야기</Subtitle> : {modalItem.text}
+            </p>
           </TextBox>
         </ContentBox>
       </ModalBox>

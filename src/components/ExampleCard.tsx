@@ -99,8 +99,8 @@ const ExampleCard = ({ item, setModal, setModalItem }: ExampleCardProps) => {
         <TextBox>
           <Title>{item.name}</Title>
           <ListBox>
-            {item.func.map((item) => (
-              <List>{item}</List>
+            {item.func.map((item, idx) => (
+              <List key={idx}>{item}</List>
             ))}
           </ListBox>
           <URLBox>
