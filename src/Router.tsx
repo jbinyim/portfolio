@@ -7,10 +7,12 @@ import Example from "./routes/Example";
 import Header from "./components/Header";
 import Contact from "./routes/Contact";
 import Footer from "./components/Footer";
+import ScrollTop from "./components/ScrollTop";
 
 const Router = () => {
   return (
     <BrowserRouter>
+      <ScrollTop />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />

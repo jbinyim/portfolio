@@ -34,6 +34,10 @@ const Logo = styled.div`
   cursor: pointer;
   background: url("https://jbinyim12.cafe24.com/web/upload/captcha/logo.png")
     center/cover no-repeat;
+  @media ${(props) => props.theme.tablet} {
+    width: 45px;
+    height: 45px;
+  }
 `;
 
 const Menu = styled.ul`

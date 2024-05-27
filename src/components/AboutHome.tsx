@@ -79,7 +79,7 @@ const OneLine = styled.p`
   font-size: 16px;
   margin-bottom: 90px;
   @media ${(props) => props.theme.tablet} {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
   }
 `;
 

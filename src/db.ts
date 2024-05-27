@@ -87,21 +87,7 @@ export const db = {
         "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-jb-coins-firebaseapp-2024-05-26-18_31_55.png",
       text: "React와 여러 라이브러리를 사용하여 암호화폐 정보를 보여주는 웹 입니다. react-router-dom을 사용하여 라우팅을 설정하고 useParams, useNavigate, useLocation 등의 훅을 사용하여 URL 라미터를 읽고, 페이지 이동을 제어한다. react-query를 사용하여 암호화폐의 정보와 가격 데이터를 비동기적으로 불러옵니다. useQuery 훅을 통해 데이터를 요청하고, 로딩 상태 및 데이터를 관리합니다. 실제 데이터를 API에서 가져옵니다. 또한 refetchInterval 옵션을 통해 5초마다 가격 보를 자동으로 새로고침합니다.",
     },
-    {
-      id: 240423,
-      type: "react",
-      name: "넷플릭스",
-      catagory: "개인",
-      skill: ["react", "redux"],
-      day: "2024-04-23 ~ 2024-04-24",
-      func: ["react-redux"],
-      link: "https://jb-netiflx.firebaseapp.com",
-      github:
-        "https://github.com/jbinyim/EZENCLASS/tree/master/240423-netfilx/01-netiflx",
-      imgUrl:
-        "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-jb-netiflx-web-app-2024-05-26-15_16_10.png",
-      text: " useEffect 훅을 사용하여 컴포넌트가 마운트될 때 movieAction.getMovies() 액션을 디스패치합니다. 이는 Redux를 통해 영화 데이터를 비동기적으로 가져오는 역할을 합니다. useSelector 훅을 사용하여 Redux 스토어의 상태 중 영화 데이터와 로딩 상태를 추출합니다.",
-    },
+
     {
       id: 240416,
       type: "react",
@@ -130,6 +116,21 @@ export const db = {
       imgUrl:
         "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-jb-findbooks-firebaseapp-2024-05-24-20_54_41.png",
       text: "제품 목록을 관리하고, 사용자가 제품을 검색하거나 카테고리별로 필터링하고, 가격에 따라 정렬할 수 있게 해주는 JavaScript 코드입니다. 기본적으로 제품 데이터를 가져와서 사용자의 입력에 따라 동적으로 제품 목록을 업데이트하는 기능을 수행합니다. 각각 신상품 순, 가격 내림차순, 가격 오름차순으로 제품을 정렬하고 검색어에 해당하는 제품만을 필터링하여 목록에 다시 표시합니다.",
+    },
+    {
+      id: 240423,
+      type: "react",
+      name: "넷플릭스",
+      catagory: "개인",
+      skill: ["react", "redux"],
+      day: "2024-04-23 ~ 2024-04-24",
+      func: ["react-redux"],
+      link: "https://jb-netiflx.firebaseapp.com",
+      github:
+        "https://github.com/jbinyim/EZENCLASS/tree/master/240423-netfilx/01-netiflx",
+      imgUrl:
+        "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-jb-netiflx-web-app-2024-05-26-15_16_10.png",
+      text: " useEffect 훅을 사용하여 컴포넌트가 마운트될 때 movieAction.getMovies() 액션을 디스패치합니다. 이는 Redux를 통해 영화 데이터를 비동기적으로 가져오는 역할을 합니다. useSelector 훅을 사용하여 Redux 스토어의 상태 중 영화 데이터와 로딩 상태를 추출합니다.",
     },
     {
       id: 240411,
