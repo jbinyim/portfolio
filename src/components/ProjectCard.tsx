@@ -5,8 +5,9 @@ import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
 import { DbData } from "../db";
+import { motion } from "framer-motion";
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   width: 100%;
   height: 500px;
   box-shadow: 2px 2px 1px #d9d9d9;
@@ -164,10 +165,11 @@ interface ProjectCardProps {
 const ProjectCard = ({ item, setModal, setModalItem }: ProjectCardProps) => {
   const onClickCard = () => {
     setModalItem(item);
+
     setModal(true);
   };
   return (
-    <Container onClick={onClickCard}>
+    <Container layoutId={item.id + ""} onClick={onClickCard}>
       <p className="see">카드를 누르시면 자세한 정보를 확인할 수 있습니다.</p>
       <ImgBox>
         <Img src={item.imgUrl} alt="img" />

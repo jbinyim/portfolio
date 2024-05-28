@@ -2,8 +2,9 @@ import React, { Dispatch, SetStateAction } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { DbData } from "../db";
+import { motion } from "framer-motion";
 
-const Container = styled.div<{ $imgUrl: string }>`
+const Container = styled(motion.div)<{ $imgUrl: string }>`
   background: url(${(props) => props.$imgUrl}) top/cover no-repeat;
   width: 100%;
   height: 320px;
@@ -75,7 +76,11 @@ const SlideCard = ({ item, setModal, setModalItem }: SlideProps) => {
     setModal((current) => !current);
   };
   return (
-    <Container $imgUrl={item.imgUrl} onClick={onclickModal}>
+    <Container
+      $imgUrl={item.imgUrl}
+      onClick={onclickModal}
+      layoutId={item.id + ""}
+    >
       <ProjectInfoBox className="infoBox">
         <InfoTitleBox>
           <Title>

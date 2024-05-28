@@ -2,6 +2,7 @@ import React, { Dispatch, SetStateAction } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
 
 const Container = styled.div`
   position: fixed;
@@ -16,7 +17,7 @@ const Container = styled.div`
   background-color: rgba(0, 0, 0, 0.6);
 `;
 
-const ModalBox = styled.div`
+const ModalBox = styled(motion.div)`
   width: 90%;
   max-width: 1280px;
   height: auto;
@@ -137,7 +138,7 @@ const Modal = ({ setModal, modalItem }: ModalProps) => {
   };
   return (
     <Container>
-      <ModalBox>
+      <ModalBox layoutId={modalItem.id + ""}>
         <CloseBox>
           <FontAwesomeIcon icon={faX} onClick={onclickModal} />
         </CloseBox>

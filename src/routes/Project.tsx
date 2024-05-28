@@ -4,6 +4,7 @@ import SubTitle from "../components/SubTitle";
 import ProjectCard from "../components/ProjectCard";
 import Modal from "../components/Modal";
 import { db } from "../db";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Container = styled.div`
   max-width: 1280px;
@@ -15,9 +16,11 @@ const Container = styled.div`
 const Project = () => {
   const [modal, setModal] = useState(false);
   const [modalItem, setModalItem] = useState({});
+
   return (
     <Container>
       <SubTitle text="project" />
+
       {db.project.map((item) => (
         <ProjectCard
           key={item.id}
@@ -26,7 +29,9 @@ const Project = () => {
           setModalItem={setModalItem}
         />
       ))}
-      {modal ? <Modal setModal={setModal} modalItem={modalItem} /> : ""}
+      <AnimatePresence>
+        {modal ? <Modal setModal={setModal} modalItem={modalItem} /> : ""}
+      </AnimatePresence>
     </Container>
   );
 };

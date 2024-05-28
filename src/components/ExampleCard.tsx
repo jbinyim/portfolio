@@ -3,8 +3,9 @@ import styled from "styled-components";
 import { DbData } from "../db";
 import { Link } from "react-router-dom";
 import Spinner from "react-bootstrap/Spinner";
+import { motion } from "framer-motion";
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   width: 286px;
   height: 360px;
   border: 1px solid #000;
@@ -92,7 +93,7 @@ const ExampleCard = ({ item, setModal, setModalItem }: ExampleCardProps) => {
 
   if (item) {
     return (
-      <Container onClick={onClickCard}>
+      <Container layoutId={item.id + ""} onClick={onClickCard}>
         <ImgBox>
           <Img src={item.imgUrl} alt="logo" />
         </ImgBox>
