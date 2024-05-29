@@ -3,6 +3,7 @@ import styled from "styled-components";
 import SubTitle from "../components/SubTitle";
 import ExampleCardBox from "../components/ExampleCardBox";
 import Modal from "../components/Modal";
+import { motion } from "framer-motion";
 
 const Container = styled.div`
   max-width: 1280px;

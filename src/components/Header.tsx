@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useMatch } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { motion, useAnimation } from "framer-motion";
 
 const Heading = styled.div`
   width: 100%;
@@ -52,6 +53,16 @@ const Menu = styled.ul`
 
 const MenuList = styled.li`
   font-size: 20px;
+  position: relative;
+`;
+
+const Stroke = styled(motion.span)`
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #000;
 `;
 
 const Bar = styled.div`
@@ -66,11 +77,12 @@ const Bar = styled.div`
   }
 `;
 
-const MenuToggleBox = styled.div`
+const MenuToggleBox = styled(motion.div)`
   background: #fff;
   position: fixed;
   top: 0;
   right: 0;
+  transform-origin: right center;
   width: 350px;
   height: 100vh;
   box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1);
@@ -88,13 +100,27 @@ const MenuToggleList = styled.li`
 `;
 
 const Header = () => {
-  const [toggle, setToggle] = useState(true);
+  const [toggle, setToggle] = useState(false);
+  const toggleAnimation = useAnimation();
   const navigate = useNavigate();
+  const about = useMatch("/about");
+  const project = useMatch("/project");
+  const example = useMatch("/example");
+  const contact = useMatch("/contact");
   const onClickHome = () => {
     navigate("/");
   };
 
   const onClickToggle = () => {
+    if (toggle) {
+      toggleAnimation.start({
+        scaleX: 0,
+      });
+    } else {
+      toggleAnimation.start({
+        scaleX: 1,
+      });
+    }
     setToggle((current) => !current);
   };
 
@@ -104,41 +130,46 @@ const Header = () => {
         <Logo onClick={onClickHome} />
         <Menu>
           <MenuList>
-            <Link to={"/about"}>About me</Link>
+            <Link to="/about">About me</Link>
+            {about && <Stroke layoutId="stroke" />}
           </MenuList>
           <MenuList>
-            <Link to={"/project"}>Project</Link>
+            <Link to="/project">Project</Link>
+            {project && <Stroke layoutId="stroke" />}
           </MenuList>
           <MenuList>
-            <Link to={"/example"}>Example</Link>
+            <Link to="/example">Example</Link>
+            {example && <Stroke layoutId="stroke" />}
           </MenuList>
           <MenuList>
-            <Link to={"/contact"}>Contact</Link>
+            <Link to="/contact">Contact</Link>
+            {contact && <Stroke layoutId="stroke" />}
           </MenuList>
         </Menu>
         <Bar>
           <FontAwesomeIcon icon={faBars} onClick={onClickToggle} />
         </Bar>
-        {toggle ? (
-          ""
-        ) : (
-          <MenuToggleBox>
-            <MenuToggle>
-              <MenuToggleList>
-                <Link to={"/about"}>About me</Link>
-              </MenuToggleList>
-              <MenuToggleList>
-                <Link to={"/project"}>Project</Link>
-              </MenuToggleList>
-              <MenuToggleList>
-                <Link to={"/example"}>Example</Link>
-              </MenuToggleList>
-              <MenuToggleList>
-                <Link to={"/contact"}>Contact</Link>
-              </MenuToggleList>
-            </MenuToggle>
-          </MenuToggleBox>
-        )}
+
+        <MenuToggleBox
+          animate={toggleAnimation}
+          initial={{ scaleX: 0 }}
+          transition={{ type: "linear" }}
+        >
+          <MenuToggle>
+            <MenuToggleList>
+              <Link to={"/about"}>About me</Link>
+            </MenuToggleList>
+            <MenuToggleList>
+              <Link to={"/project"}>Project</Link>
+            </MenuToggleList>
+            <MenuToggleList>
+              <Link to={"/example"}>Example</Link>
+            </MenuToggleList>
+            <MenuToggleList>
+              <Link to={"/contact"}>Contact</Link>
+            </MenuToggleList>
+          </MenuToggle>
+        </MenuToggleBox>
       </Head>
     </Heading>
   );
