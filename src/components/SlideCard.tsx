@@ -11,10 +11,8 @@ const Container = styled(motion.div)<{ $imgUrl: string }>`
   border: 1px solid ${(props) => props.theme.imgBgColor};
   &:hover {
     .infoBox {
-      cursor: pointer;
-      transition: all 0.3s;
-      background: rgba(0, 0, 0, 0.7);
-      opacity: 1;
+      transition: all 0.7s;
+      transform: translateY(0);
     }
   }
 `;
@@ -26,13 +24,22 @@ const ProjectInfoBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  opacity: 0;
+  align-items: center;
+  transform: translateY(-500px);
+  background: ${(props) => props.theme.textBgColor};
   a {
-    width: 110px;
+    cursor: pointer;
+    text-align: center;
+    width: 160px;
     color: #fff;
     font-size: 20px;
+    border: 1px solid #fff;
+    padding: 7px;
+    transition: all 0.3s;
+    border-radius: 7px;
     &:hover {
-      text-decoration: underline;
+      background: #fff;
+      color: #000;
     }
   }
 `;
@@ -64,6 +71,22 @@ const SubTitleBox = styled.div`
   }
 `;
 
+const SeeMore = styled.p`
+  cursor: pointer;
+  text-align: center;
+  width: 160px;
+  color: #fff;
+  font-size: 20px;
+  border: 1px solid #fff;
+  padding: 7px;
+  transition: all 0.3s;
+  border-radius: 7px;
+  &:hover {
+    background: #fff;
+    color: #000;
+  }
+`;
+
 interface SlideProps {
   item: DbData;
   setModal: Dispatch<SetStateAction<boolean>>;
@@ -76,11 +99,7 @@ const SlideCard = ({ item, setModal, setModalItem }: SlideProps) => {
     setModal((current) => !current);
   };
   return (
-    <Container
-      $imgUrl={item.imgUrl}
-      onClick={onclickModal}
-      layoutId={item.id + ""}
-    >
+    <Container $imgUrl={item.imgUrl} layoutId={item.id + ""}>
       <ProjectInfoBox className="infoBox">
         <InfoTitleBox>
           <Title>
@@ -93,8 +112,9 @@ const SlideCard = ({ item, setModal, setModalItem }: SlideProps) => {
           </SubTitleBox>
         </InfoTitleBox>
         <Link to={item.link} target="blank">
-          Project URL
+          사이트 바로가기
         </Link>
+        <SeeMore onClick={onclickModal}>자세히 보기</SeeMore>
       </ProjectInfoBox>
     </Container>
   );

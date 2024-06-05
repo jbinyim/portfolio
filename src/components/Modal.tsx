@@ -11,7 +11,7 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  z-index: 9998;
+  z-index: 99999;
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.6);
@@ -22,7 +22,7 @@ const ModalBox = styled(motion.div)`
   max-width: 1280px;
   height: auto;
   max-height: 90%;
-  margin-top: 50px;
+  /* margin-top: 50px; */
   background: #fff;
   border-radius: 10px;
   padding: 20px;
