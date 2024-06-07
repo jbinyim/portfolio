@@ -54,6 +54,10 @@ const Menu = styled.ul`
 const MenuList = styled.li`
   font-size: 20px;
   position: relative;
+  transition: all 0.3s;
+  &:hover {
+    letter-spacing: 2px;
+  }
 `;
 
 const Stroke = styled(motion.span)`
@@ -109,6 +113,7 @@ const Header = () => {
   const contact = useMatch("/contact");
   const onClickHome = () => {
     navigate("/");
+    window.scrollTo(0, 0);
   };
 
   const onClickToggle = () => {

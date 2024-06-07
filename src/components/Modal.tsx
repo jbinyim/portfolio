@@ -22,7 +22,6 @@ const ModalBox = styled(motion.div)`
   max-width: 1280px;
   height: auto;
   max-height: 90%;
-  /* margin-top: 50px; */
   background: #fff;
   border-radius: 10px;
   padding: 20px;

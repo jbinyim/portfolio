@@ -57,7 +57,7 @@ const SkillHome = () => {
       <SkillCard
         skillLogo={skillLogo.git}
         title="Git"
-        text="새로운 저장소를 생성하고, 기존 저장소를 복제(clone)하여 로컬 작업 공간에 가져올 수 있습니다. 작업한 내용을 로컬 저장소에 커밋하고, 변경사항을 원격 저장소에 푸시(push)할 수 있습니다. 른 브랜치와 병합할 수 있습니다."
+        text="새로운 저장소를 생성하고, 기존 저장소를 복제(clone)하여 로컬 작업 공간에 가져올 수 있습니다. 작업한 내용을 로컬 저장소에 커밋하고, 변경사항을 원격 저장소에 푸시(push)할 수 있습니다. 다른 브랜치와 병합할 수 있습니다."
       />
       <SkillCard
         skillLogo={skillLogo.firebase}

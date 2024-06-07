@@ -11,8 +11,8 @@ const Container = styled(motion.div)<{ $imgUrl: string }>`
   border: 1px solid ${(props) => props.theme.imgBgColor};
   &:hover {
     .infoBox {
-      transition: all 0.7s;
-      transform: translateY(0);
+      transition: all 0.3s;
+      opacity: 1;
     }
   }
 `;
@@ -25,7 +25,7 @@ const ProjectInfoBox = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  transform: translateY(-500px);
+  opacity: 0;
   background: ${(props) => props.theme.textBgColor};
   a {
     cursor: pointer;
@@ -51,7 +51,6 @@ const Title = styled.h1`
   color: #fff;
   display: flex;
   align-items: center;
-  /* justify-content: center; */
   margin-bottom: 20px;
   p {
     font-size: 16px;
@@ -65,7 +64,7 @@ const SubTitleBox = styled.div`
   p {
     color: #fff;
     font-size: 18px;
-    border: 1px solid #fff;
+    font-style: italic;
     border-radius: 50px;
     padding: 0 5px;
   }
@@ -107,7 +106,7 @@ const SlideCard = ({ item, setModal, setModalItem }: SlideProps) => {
           </Title>
           <SubTitleBox>
             {item.skill.map((s, idx) => (
-              <p key={idx}>{s}</p>
+              <p key={idx}>#{s}</p>
             ))}
           </SubTitleBox>
         </InfoTitleBox>
