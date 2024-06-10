@@ -98,7 +98,7 @@ const SlideCard = ({ item, setModal, setModalItem }: SlideProps) => {
     setModal((current) => !current);
   };
   return (
-    <Container $imgUrl={item.imgUrl} layoutId={item.id + ""}>
+    <Container $imgUrl={item.imgUrl[0]} layoutId={item.id + ""}>
       <ProjectInfoBox className="infoBox">
         <InfoTitleBox>
           <Title>

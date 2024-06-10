@@ -5,5 +5,6 @@ export const theme: DefaultTheme = {
   imgBgColor: "#BDBDBD",
   moreTablet: "(max-width: 1230px)",
   tablet: "(max-width: 1024px)",
+  moreMobile: "(max-width: 850px)",
   mobile: "(max-width: 500px)",
 };

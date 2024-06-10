@@ -95,7 +95,7 @@ const ExampleCard = ({ item, setModal, setModalItem }: ExampleCardProps) => {
     return (
       <Container layoutId={item.id + ""} onClick={onClickCard}>
         <ImgBox>
-          <Img src={item.imgUrl} alt="logo" />
+          <Img src={item.imgUrl[0]} alt="logo" />
         </ImgBox>
         <TextBox>
           <Title>{item.name}</Title>

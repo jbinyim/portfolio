@@ -172,7 +172,7 @@ const ProjectCard = ({ item, setModal, setModalItem }: ProjectCardProps) => {
     <Container layoutId={item.id + ""} onClick={onClickCard}>
       <p className="see">카드를 누르시면 자세한 정보를 확인할 수 있습니다.</p>
       <ImgBox>
-        <Img src={item.imgUrl} alt="img" />
+        <Img src={item.imgUrl[0]} alt="img" />
       </ImgBox>
       <TextBox>
         <TextTop>
