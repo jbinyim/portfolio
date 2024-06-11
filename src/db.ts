@@ -1,12 +1,16 @@
 export const db = {
   project: [
     {
-      id: 240520,
+      id: 240501,
       name: "피파전적",
       catagory: "2인",
       skill: ["react", "typescript", "react-query"],
-      day: "2024-04-24 ~ 2024-04-28",
-      func: [""],
+      day: "2024-05-01 ~ 2024-06-09",
+      func: [
+        "react-router-dom을 사용하여 다양한 페이지로의 라우팅을 설정했습니다.",
+        "react-query를 이용하여 실시간 api 값을 가져옵니다.",
+        "refetchOnWindowFocus 옵션을 false로 설정하여 브라우저 창이 다시 포커스될 때 자동으로 refetch되지 않도록 하고 있습니다.",
+      ],
       link: "https://fcgg-6ccd7.web.app",
       github: "https://github.com/jbinyim/fconline-record",
       imgUrl: [
@@ -18,7 +22,7 @@ export const db = {
       text: "",
     },
     {
-      id: 240424,
+      id: 240423,
       name: "꼬리의 일상",
       catagory: "개인",
       skill: ["react", "redux"],
@@ -33,6 +37,11 @@ export const db = {
       github: "https://github.com/jbinyim/react-ex/tree/master/taillife",
       imgUrl: [
         "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-taillife-web-app-2024-05-18-14_32_56.png",
+        "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-taillife-detail.png",
+        "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-taillife-firebaseapp-diary-list.png",
+        "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-taillife-firebaseapp-new-2024-06-11-11_37_27.png",
+        "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-taillife-firebaseapp-diaryinfo-0-2024-06-11-11_37_35.png",
+        "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-taillife-firebaseapp-edit-0-2024-06-11-11_37_45.png",
       ],
       text: "Diary 부분을 만들때 로컬 스토리를 이용해 만들다 보니 생각보다 어려웠으나 CRUD에 따라 차근차근 만들어 가며 완료하였습니다. 또 컴포넌트 분리를 통해 코드의 재사용성과 유지보수성을 향상시켰습니다. id와 같은 동적 파라미터를 사용하여 갤러리 상세 페이지나 일기 상제 정보 페이지로 라우팅을 설정했습니다. 이를 통해 사용자가 일기의 상세정보를 보거나 편집할 수 있습니다.",
     },
@@ -51,6 +60,14 @@ export const db = {
       github: "https://github.com/jbinyim/team-project-theventi.git",
       imgUrl: [
         "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-theventi-d1217-web-app-common-common-html-2024-05-17-01_07_19.png",
+        "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-theventi-d1217-firebaseapp-2024-06-11-11_44_15.png",
+        "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-theventi-d1217-firebaseapp-community-evented-event-html-2024-06-11-11_44_41.png",
+        "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-theventi-d1217-firebaseapp-community-good-good-html-2024-06-11-11_44_51.png",
+        "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-theventi-d1217-firebaseapp-community-message-message-html-2024-06-11-11_45_18.png",
+        "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-theventi-d1217-firebaseapp-community-notice-notice-html-2024-06-11-11_44_26.png",
+        "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-theventi-d1217-firebaseapp-community-qna-qna-html-2024-06-11-11_45_11.png",
+        "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-theventi-d1217-firebaseapp-community-sns-sns-html-2024-06-11-11_45_02.png",
+        "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-theventi-d1217-firebaseapp-community-volunteer-volunteer-html-2024-06-11-11_45_29.png",
       ],
       text: "PM으로써 팀원 각각에게 맞는 임무를 배정하고 스케줄을 조율하면서 프로젝트를 시작했습니다. 중간에 팀원중 한명이 개인사정으로 이탈해야하는 문제가 있었지만 팀원들과의 소통으로 잘 해결하여 완성했습니다. 저는 커뮤니티 부분을 담당하였으며, 공지사항 목록에서 특정 항목을 클릭했을 때, 해당 공지사항의 상세 페이지로 이동합니다. 이 함수는 클릭 이벤트와 함께 호출되며, 공지사항의 ID를 URL에 포함시켜 새 탭에서 상세 페이지를 엽니다. 검색 폼이 제출될 때 호출되는 함수입니다. 사용자가 입력한 검색어를 기반으로 제목에서 해당 텍스트를 포함하는 공지사항만을 필터링하여 표시합니다. 검색 결과는 새로운 리스트로 구성되어 표시됩니다. fetch API를 사용하여 공지사항 데이터를 비동기적으로 불러옵니다. 불러온 데이터는 화면에 표시되며, 카테고리로 구분되여 각각 다르게 표시합니다. 드롭다운 메뉴에서 카테고리를 선택하면, 선택된 카테고리에 해당하는 공지사항만을 표시합니다. 이 기능은  함수에 의해 구현되며, 사용자가 선택한 카테고리 값에 따라 다른 함수를 호출하여 결과를 필터링합니다. 공지사항 제목을 클릭할 때마다 함수가 호출되도록 이벤트 리스너를 추가합니다. 또한, 검색 폼에 대해서는 submit 이벤트가 발생할 때 함수가 호출되도록 설정합니다.",
     },
@@ -72,6 +89,8 @@ export const db = {
         "https://github.com/jbinyim/EZENCLASS/tree/master/240425-mbti/01-mbti",
       imgUrl: [
         "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-jb-mbti-firebaseapp-2024-05-26-18_12_52.png",
+        "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-jb-mbti-firebaseapp-qusetion-2024-06-11-11_47_59.png",
+        "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-jb-mbti-firebaseapp-result-2024-06-11-11_48_11.png",
       ],
       text: "사용자가 MBTI 테스트를 완료한 후, 결과 페이지에서 해당 MBTI에 맞는 결과와 설명을 보여줍니다. 사용자는 결과 페이지에서 테스트 다시하기 버튼을 눌러 메인 페이지로 돌아갈 수 있습니다. useEffect 훅을 사용하여 URL에서 MBTI 값을 가져와 해당 결과 데이터를 찾고 상태를 업데이트합니다.",
     },
@@ -142,7 +161,7 @@ export const db = {
       text: "제품 목록을 관리하고, 사용자가 제품을 검색하거나 카테고리별로 필터링하고, 가격에 따라 정렬할 수 있게 해주는 JavaScript 코드입니다. 기본적으로 제품 데이터를 가져와서 사용자의 입력에 따라 동적으로 제품 목록을 업데이트하는 기능을 수행합니다. 각각 신상품 순, 가격 내림차순, 가격 오름차순으로 제품을 정렬하고 검색어에 해당하는 제품만을 필터링하여 목록에 다시 표시합니다.",
     },
     {
-      id: 240423,
+      id: 240424,
       type: "react",
       name: "넷플릭스",
       catagory: "개인",

@@ -33,7 +33,7 @@ const Logo = styled.div`
   width: 60px;
   height: 60px;
   cursor: pointer;
-  background: url("https://jbinyim12.cafe24.com/web/upload/captcha/logo.png")
+  background: url("https://jbinyim12.cafe24.com/web/upload/captcha/image%201.png")
     center/cover no-repeat;
   @media ${(props) => props.theme.tablet} {
     width: 45px;

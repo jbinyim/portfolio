@@ -6,7 +6,7 @@ const Container = styled.div`
   height: 100%;
   box-shadow: 2px 2px 1px #d9d9d9;
   border: 1px solid #d9d9d9;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   margin: 0 auto;
 `;
 

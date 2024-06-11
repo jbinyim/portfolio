@@ -36,7 +36,7 @@ const ModalBox = styled(motion.div)`
   display: flex;
   flex-direction: column;
   @media ${(props) => props.theme.mobile} {
-    margin-top: 70px;
+    margin-top: 10px;
     width: 95%;
     height: auto;
     padding: 15px;
@@ -245,7 +245,9 @@ const Modal = ({ setModal, modalItem }: ModalProps) => {
           <Subtitle>💻 작업 화면</Subtitle>
           <DevImgBox>
             {modalItem.imgUrl &&
-              modalItem.imgUrl.map((img) => <DevImage $imgUrl={img} />)}
+              modalItem.imgUrl.map((img, idx) => (
+                <DevImage key={idx} $imgUrl={img} />
+              ))}
           </DevImgBox>
         </DevImg>
       </ModalBox>

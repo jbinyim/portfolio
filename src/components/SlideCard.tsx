@@ -106,7 +106,7 @@ const SlideCard = ({ item, setModal, setModalItem }: SlideProps) => {
           </Title>
           <SubTitleBox>
             {item.skill.map((s, idx) => (
-              <p key={idx}>#{s}</p>
+              <p key={idx}># {s}</p>
             ))}
           </SubTitleBox>
         </InfoTitleBox>

@@ -16,6 +16,7 @@ const Container = styled.div`
     height: 745px;
     flex-direction: column;
     gap: 15px;
+    text-align: center;
   }
 `;
 
@@ -45,6 +46,7 @@ const TextBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   @media ${(props) => props.theme.tablet} {
     padding: 0 10px;
   }
@@ -79,7 +81,7 @@ const OneLine = styled.p`
   font-size: 16px;
   margin-bottom: 90px;
   @media ${(props) => props.theme.tablet} {
-    margin-bottom: 40px;
+    margin: 0 auto 40px;
   }
 `;
 
@@ -101,6 +103,11 @@ const BtnBox = styled.div`
     color: #000;
     border: 1px solid #000;
     gap: 20px;
+  }
+  @media ${(props) => props.theme.tablet} {
+    width: 195px;
+    height: 45px;
+    margin: 0 auto;
   }
 `;
 
