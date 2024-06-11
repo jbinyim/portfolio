@@ -33,6 +33,7 @@ const ProjectInfoBox = styled.div`
     width: 160px;
     color: #fff;
     font-size: 20px;
+    letter-spacing: -1px;
     border: 1px solid #fff;
     padding: 7px;
     transition: all 0.3s;
