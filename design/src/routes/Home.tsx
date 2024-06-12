@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+import { useMatch, PathMatch } from "react-router-dom";
 import styled from "styled-components";
 import Introduce from "../components/Introduce";
 import About from "../components/About";
 import Work from "../components/Work";
+import Contact from "../components/Contact";
+import { db } from "../db";
+import Modal from "../components/Modal";
 
 const Container = styled.div`
   width: 100%;
@@ -22,14 +26,32 @@ const Contents = styled.div`
   background: ${(props) => props.theme.bgColor};
 `;
 
-const Contact = styled.div`
+const Overlay = styled.div`
   width: 100%;
-  height: 100vh;
-  background: url("https://raw.githubusercontent.com/jieun419/jieun_portfolio/main/src/assets/images/front_bg.jpg")
-    center/cover no-repeat;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+`;
+
+const ModalBox = styled.div`
+  width: 40vw;
+  height: 60vh;
+  position: relative;
+
+  margin: 0 auto;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #fff;
 `;
 
 const Home = () => {
+  const bigModalMatch = useMatch("/modal/:modalId");
+
+  const clickModal =
+    bigModalMatch?.params.modalId &&
+    db.project.find((item) => item.id === Number(bigModalMatch.params.modalId));
+
   return (
     <Container>
       <IntroBox>
@@ -39,7 +61,10 @@ const Home = () => {
         <About />
         <Work />
       </Contents>
-      <Contact></Contact>
+      <Contact />
+      {bigModalMatch ? (
+        <>{clickModal && <Modal clickModal={clickModal} />}</>
+      ) : null}
     </Container>
   );
 };

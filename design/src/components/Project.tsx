@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { db } from "../db";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useMatch, PathMatch } from "react-router-dom";
 
 const Container = styled.div`
   width: 100%;
@@ -118,6 +118,12 @@ const SeeMore = styled.p`
 `;
 
 const Project = () => {
+  const history = useNavigate();
+
+  const onBoxClick = (modalId: number) => {
+    history(`/modal/${modalId}`);
+  };
+
   return (
     <Container id="project">
       {db.project.map((item) => (
@@ -139,7 +145,7 @@ const Project = () => {
             <Link to={item.link} target="_black">
               사이트 바로가기
             </Link>
-            <SeeMore>자세히 보기</SeeMore>
+            <SeeMore onClick={() => onBoxClick(item.id)}>자세히 보기</SeeMore>
           </HoverBox>
         </Contents>
       ))}

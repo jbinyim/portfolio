@@ -45,7 +45,7 @@ const About = () => {
         <HashTag>
           <p>#임정빈</p>
           <p>#99.12.14</p>
-          <p>#github.com/jbinyim</p>
+          <p>#프론트엔드 개발자</p>
         </HashTag>
       </Contents>
       <Interview />
