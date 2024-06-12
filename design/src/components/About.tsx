@@ -28,6 +28,12 @@ const Contents = styled.div`
 
 const Img = styled.img`
   height: 420px;
+  @media ${(props) => props.theme.s} {
+    height: 300px;
+  }
+  @media ${(props) => props.theme.xs} {
+    height: 280px;
+  }
 `;
 
 const HashTag = styled.div`
@@ -44,7 +50,7 @@ const About = () => {
       <h1>About me</h1>
       <Contents>
         <Img
-          src="https://jbinyim12.cafe24.com/web/upload/captcha/trainJb-removebg-preview.png"
+          src="https://jbinyim12.cafe24.com/web/upload/captcha/image_72-removebg-preview.png"
           alt=""
         />
         <HashTag>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import Project from "./Project";
 import Example from "../components/Example";
@@ -11,14 +11,14 @@ const Container = styled.div`
   color: #fff;
 `;
 
-const SubNavBox = styled.ul`
+const SubNavBox = styled.ul<{ $isMobile: boolean }>`
   width: 300px;
   height: 100vh;
   padding-top: 100px;
   position: sticky;
   top: 0;
   @media ${(props) => props.theme.s} {
-    display: none;
+    display: ${(props) => (props.$isMobile ? "none" : "block")};
   }
 `;
 
@@ -32,14 +32,14 @@ const ProjectBtn = styled.p<{ $textColor: number }>`
   ${(props) =>
     props.$textColor === 3837
       ? "color: rgba(255, 255, 255, 1)"
-      : "color: rgba(255, 255, 255, 0.2)"}
+      : "color: rgba(255, 255, 255, 0.2)"};
 `;
 const ExampleBtn = styled.p<{ $textColor: number }>`
   transition: all 0.3s;
   ${(props) =>
     props.$textColor === 4636
       ? "color: rgba(255, 255, 255, 1)"
-      : "color: rgba(255, 255, 255, 0.2)"}
+      : "color: rgba(255, 255, 255, 0.2)"};
 `;
 
 const ProjectBox = styled.div`
@@ -48,37 +48,50 @@ const ProjectBox = styled.div`
 
 const Work = () => {
   const [workBtn, setWorkBtn] = useState(3837);
+  const [isMobile, setIsMobile] = useState(false);
+  const projectRef = useRef<HTMLDivElement>(null);
+  const exampleRef = useRef<HTMLDivElement>(null);
 
-  const movePage = (pos: number) => {
-    setWorkBtn(pos);
-    window.scrollTo({
-      top: pos,
-      behavior: "smooth",
-    });
+  const movePage = (ref: React.RefObject<HTMLDivElement>) => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
     const handleScroll = () => {
       const currentScroll = window.pageYOffset;
-      if (currentScroll < 4636) {
+      // const projectTop = projectRef.current?.offsetTop || 0;
+      const exampleTop = exampleRef.current?.offsetTop || 0;
+
+      if (isMobile) {
         setWorkBtn(3837);
       } else {
-        setWorkBtn(4636);
+        if (currentScroll < exampleTop) {
+          setWorkBtn(3837);
+        } else {
+          setWorkBtn(4636);
+        }
       }
     };
     window.addEventListener("scroll", handleScroll);
     return () => {
+      window.removeEventListener("resize", handleResize);
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [isMobile, projectRef, exampleRef]);
 
   return (
     <Container>
-      <SubNavBox>
+      <SubNavBox $isMobile={isMobile}>
         <SubNav>
           <ProjectBtn
             className="project"
-            onClick={() => movePage(3837)}
+            onClick={() => movePage(projectRef)}
             $textColor={workBtn}
           >
             Project
@@ -87,7 +100,7 @@ const Work = () => {
         <SubNav>
           <ExampleBtn
             className="example"
-            onClick={() => movePage(4636)}
+            onClick={() => movePage(exampleRef)}
             $textColor={workBtn}
           >
             Example
@@ -95,8 +108,12 @@ const Work = () => {
         </SubNav>
       </SubNavBox>
       <ProjectBox>
-        <Project />
-        <Example />
+        <div ref={projectRef}>
+          <Project />
+        </div>
+        <div ref={exampleRef}>
+          <Example />
+        </div>
       </ProjectBox>
     </Container>
   );

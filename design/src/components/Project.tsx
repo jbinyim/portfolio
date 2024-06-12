@@ -5,11 +5,12 @@ import { Link, useNavigate, useMatch, PathMatch } from "react-router-dom";
 
 const Container = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   padding-top: 100px;
+  margin-bottom: 200px;
   @media ${(props) => props.theme.xl} {
     grid-template-columns: repeat(3, 1fr);
   }

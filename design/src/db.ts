@@ -21,7 +21,7 @@ export const db = {
         "https://jbinyim12.cafe24.com/web/upload/captcha/%EA%B2%BD%EA%B8%B0%EC%A0%95%EB%B3%B4.png",
         "https://jbinyim12.cafe24.com/web/upload/captcha/%EB%9D%BC%EC%9D%B8%EC%97%85.png",
       ],
-      text: "",
+      text: "친구와 함계한 프로젝트이며 웹 개발자라는 꿈을 갖게된 계기로 시작된 게임 전적 검색 사이트입니다. 게임회사에서 지원하는 API를 실시간으로 가져오며 게임플레이를 완료하면 해당 게임에 대한 정보들을 볼 수 있습니다. 회사에서 지원하는 API에는 하루 호출량이 정해져있어 랜더링 관리와 상태관리는데에 어려움이었습니다. 이러한 문제를 Recoil를 이용하여 관리하였습니다. 퍼블리셔 친구와 함께 하다보니 style-components를 사용하지 못 하여 불편함을 겪었으나 다양한 React Hook을 이용하여 해결하였습니다.",
     },
     {
       id: 240423,
@@ -100,6 +100,28 @@ export const db = {
         "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-jb-mbti-firebaseapp-result-2024-06-11-11_48_11.png",
       ],
       text: "사용자가 MBTI 테스트를 완료한 후, 결과 페이지에서 해당 MBTI에 맞는 결과와 설명을 보여줍니다. 사용자는 결과 페이지에서 테스트 다시하기 버튼을 눌러 메인 페이지로 돌아갈 수 있습니다. useEffect 훅을 사용하여 URL에서 MBTI 값을 가져와 해당 결과 데이터를 찾고 상태를 업데이트합니다.",
+    },
+    {
+      id: 240513,
+      type: "react",
+      name: "portfolio",
+      catagory: "개인",
+      skill: ["react", "typescript"],
+      day: "2024-05-13 ~ 2024.05.24",
+      func: [
+        "저와 저의 작품을 소개하는 첫번째 포트폴리오입니다.",
+        "framer-motion을 이용하여 다양한 애니메이션 효과를 만들어 보았습니다.",
+      ],
+      link: "https://yjb-portfolio.firebaseapp.com",
+      github: "https://github.com/jbinyim/portfolio/tree/master/basic",
+      imgUrl: [
+        "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-yjb-portfolio-firebaseapp-2024-06-12-22_10_38.png",
+        "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-yjb-portfolio-firebaseapp-about-2024-06-12-22_10_49.png",
+        "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-yjb-portfolio-firebaseapp-project-2024-06-12-22_10_56.png",
+        "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-yjb-portfolio-firebaseapp-example-2024-06-12-22_11_03.png",
+        "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-yjb-portfolio-firebaseapp-contact-2024-06-12-22_11_09.png",
+      ],
+      text: "처음 코드에 발을 디뎠을 때 만들어본 레이아웃 및 디자인으로 어디까지 성장을 했는지 알기 위해 만들어본 임정빈의 첫 번째 포트폴리오입니다. props 값으로 usestate 넘겨줄 때마다 타입 정의하는 것에 어려움이 있었지만 구글링을 통해 이해하며 해결할 수 있었습니다.",
     },
   ],
   example: [

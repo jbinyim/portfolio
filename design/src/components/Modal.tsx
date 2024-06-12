@@ -46,7 +46,7 @@ const CloseBox = styled.div`
   margin-bottom: 20px;
   background: #fff;
   padding: 10px;
-  border-bottom: 1px solid ${(props) => props.theme.textBgColor};
+  border-bottom: 1px solid ${(props) => props.theme.boxColor};
   .svg-inline--fa {
     cursor: pointer;
     font-size: 20px;
@@ -95,10 +95,16 @@ const TextBox = styled.div`
   gap: 10px;
 `;
 
+const ProjectText = styled.p`
+  margin-top: 10px;
+  margin-bottom: 20px;
+`;
+
 const MainSkill = styled.div`
   margin-bottom: 30px;
   p {
     margin: 0;
+    margin-top: 10px;
   }
 `;
 
@@ -115,7 +121,7 @@ const SkillBox = styled.div`
 const DevImg = styled.div``;
 
 const DevImgBox = styled.div`
-  margin-top: 10px;
+  margin-top: 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 15px;
@@ -130,7 +136,8 @@ const DevImgBox = styled.div`
 const DevImage = styled.div<{ $imgUrl: string }>`
   width: 100%;
   height: 300px;
-  border: 1px solid ${(props) => props.theme.textBgColor};
+  border: 1px solid ${(props) => props.theme.boxColor};
+  border-radius: 8px;
   background-image: url(${(props) => props.$imgUrl});
   background-position: top;
   background-size: cover;
@@ -181,8 +188,8 @@ const Modal = ({ clickModal }: IModal) => {
             <Img $imgUrl={clickModal.imgUrl && clickModal.imgUrl[0]} />
           </ImgBox>
           <TextBox>
-            <h1>{clickModal.name}</h1>
-            <p>{clickModal.catagory}프로젝트</p>
+            <h1>🔊 {clickModal.name}</h1>
+            <ProjectText>{clickModal.catagory}프로젝트</ProjectText>
             <MainSkill>
               <Subtitle>📅 작업기간</Subtitle>
               <p>{clickModal.day}</p>
