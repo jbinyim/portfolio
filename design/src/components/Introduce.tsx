@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 const Container = styled.div`
   width: 100%;
@@ -11,21 +10,6 @@ const Container = styled.div`
   position: relative;
 `;
 
-const HeaderBox = styled.div`
-  display: flex;
-  gap: 20px;
-`;
-
-const BtnBox = styled.div`
-  padding: 5px;
-  text-align: center;
-  border-bottom: 4px solid #000;
-  transition: all 0.3s;
-  &:hover {
-    color: #fff;
-    background: #000;
-  }
-`;
 const TitleBox = styled.div`
   text-align: center;
   position: relative;
@@ -43,12 +27,43 @@ const TitleBox = styled.div`
     left: 50%;
     transform: translateX(-50%);
   }
+  @media ${(props) => props.theme.m} {
+    h2 {
+      margin-top: 50px;
+      font-size: 100px;
+    }
+    p {
+      font-size: 30px;
+    }
+  }
+  @media ${(props) => props.theme.s} {
+    h2 {
+      font-size: 50px;
+    }
+    p {
+      font-size: 20px;
+    }
+  }
+  @media ${(props) => props.theme.xs} {
+    h2 {
+      font-size: 40px;
+    }
+    p {
+      font-size: 18px;
+    }
+  }
 `;
 
 const Text = styled.p`
   margin-top: 40px;
   text-align: center;
   font-size: 20px;
+  @media ${(props) => props.theme.m} {
+    font-size: 16px;
+  }
+  @media ${(props) => props.theme.s} {
+    font-size: 13px;
+  }
 `;
 
 const Img = styled.img`
@@ -57,21 +72,17 @@ const Img = styled.img`
   left: 50%;
   transform: translateX(-50%);
   height: 550px;
+  @media ${(props) => props.theme.m} {
+    height: 450px;
+  }
+  @media ${(props) => props.theme.s} {
+    height: 350px;
+  }
 `;
 
 const Introduce = () => {
   return (
     <Container>
-      <HeaderBox>
-        <BtnBox>
-          <Link to={`https://yjb-portfolio.firebaseapp.com/`}>Home</Link>
-        </BtnBox>
-        <BtnBox>
-          <Link to={`https://github.com/jbinyim`} target="_blank">
-            Github
-          </Link>
-        </BtnBox>
-      </HeaderBox>
       <TitleBox>
         <h2>front-end</h2>
         <p>

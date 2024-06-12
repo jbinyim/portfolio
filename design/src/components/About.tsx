@@ -11,6 +11,11 @@ const Container = styled.div`
   h1 {
     font-size: 60px;
   }
+  @media ${(props) => props.theme.xs} {
+    h1 {
+      font-size: 55px;
+    }
+  }
 `;
 
 const Contents = styled.div`

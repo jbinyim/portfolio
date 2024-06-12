@@ -2,6 +2,7 @@ export const db = {
   project: [
     {
       id: 240501,
+      type: "react",
       name: "피파전적",
       catagory: "2인",
       skill: ["react", "typescript", "react-query"],
@@ -24,6 +25,7 @@ export const db = {
     },
     {
       id: 240423,
+      type: "react",
       name: "꼬리의 일상",
       catagory: "개인",
       skill: ["react", "redux"],
@@ -49,6 +51,7 @@ export const db = {
     },
     {
       id: 240229,
+      type: "javascript",
       name: "더 벤티",
       catagory: "4인",
       skill: ["Html", "Css", "javascript"],
@@ -245,7 +248,7 @@ export const skillLogo = {
 
 export interface DbData {
   id: number;
-  type?: string;
+  type: string;
   name: string;
   catagory: string;
   skill: string[];

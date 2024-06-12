@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   width: 100%;
@@ -26,20 +27,61 @@ const TitleBox = styled.div`
     left: 50%;
     transform: translateX(-50%);
   }
+  media ${(props) => props.theme.m} {
+    h2 {
+      margin-top: 50px;
+      font-size: 100px;
+    }
+    p {
+      font-size: 30px;
+    }
+  }
+  @media ${(props) => props.theme.s} {
+    h2 {
+      font-size: 50px;
+    }
+    p {
+      font-size: 20px;
+    }
+  }
+  @media ${(props) => props.theme.xs} {
+    h2 {
+      font-size: 40px;
+    }
+    p {
+      font-size: 18px;
+    }
+  }
 `;
 
 const Text = styled.p`
   margin-top: 40px;
   text-align: center;
   font-size: 20px;
+  @media ${(props) => props.theme.m} {
+    font-size: 16px;
+  }
+  @media ${(props) => props.theme.s} {
+    font-size: 13px;
+  }
 `;
 
-const LinkBox = styled.ul`
+const HeaderBox = styled.div`
+  margin-top: 100px;
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 200px;
-  margin-top: 100px;
+`;
+
+const BtnBox = styled.div`
+  padding: 5px;
+  text-align: center;
+  border-bottom: 4px solid #000;
+  transition: all 0.3s;
+  &:hover {
+    color: #fff;
+    background: #000;
+  }
 `;
 
 const Contact = () => {
@@ -54,10 +96,16 @@ const Contact = () => {
         <br />
         항상 사용자의 관점에서 생각하며 사용하기 좋은 서비스를 만들고 싶습니다.
       </Text>
-      <LinkBox>
-        <li>Github</li>
-        <li>email</li>
-      </LinkBox>
+      <HeaderBox>
+        <BtnBox>
+          <Link to={`https://yjb-portfolio.firebaseapp.com/`}>Home</Link>
+        </BtnBox>
+        <BtnBox>
+          <Link to={`https://github.com/jbinyim`} target="_blank">
+            Github
+          </Link>
+        </BtnBox>
+      </HeaderBox>
     </Container>
   );
 };

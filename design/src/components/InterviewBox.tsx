@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -9,14 +9,24 @@ const Container = styled.div`
   background: ${(props) => props.theme.boxColor};
   border-radius: 30px;
   position: relative;
-  h2 {
-    font-size: 24px;
-    margin-bottom: 30px;
+  cursor: pointer;
+  &:hover {
+    background: rgba(150, 150, 150, 0.3);
   }
-  p {
-    font-size: 16px;
-    line-height: 1.5rem;
+`;
+
+const Title = styled.h2`
+  font-size: 24px;
+
+  @media ${(props) => props.theme.s} {
+    font-size: 18px;
   }
+`;
+
+const Text = styled.p`
+  margin-top: 30px;
+  font-size: 16px;
+  line-height: 1.5rem;
 `;
 
 interface IInterviewBox {
@@ -25,10 +35,16 @@ interface IInterviewBox {
 }
 
 const InterviewBox = ({ q, a }: IInterviewBox) => {
+  const [toggle, setToggle] = useState(false);
+
+  const onClickToggle = () => {
+    setToggle((prev) => !prev);
+  };
+
   return (
-    <Container>
-      <h2>Q. {q}</h2>
-      <p>{a}</p>
+    <Container onClick={onClickToggle}>
+      <Title>Q. {q}</Title>
+      {toggle ? <Text>{a}</Text> : null}
     </Container>
   );
 };

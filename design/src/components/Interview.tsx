@@ -7,9 +7,10 @@ const Container = styled.div`
   height: 100%;
   margin: 0 auto;
   color: #fff;
-  h2 {
-    font-size: 30px;
-  }
+`;
+
+const Title = styled.h2`
+  font-size: 30px;
 `;
 
 const Interview = () => {

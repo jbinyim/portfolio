@@ -1,7 +1,7 @@
 import React from "react";
 import { db, DbData } from "../db";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Contents = styled.div`
   position: relative;
@@ -113,6 +113,11 @@ interface IExampleCard {
 }
 
 const ExampleCard = ({ item }: IExampleCard) => {
+  const history = useNavigate();
+
+  const onBoxClick = (modalId: number) => {
+    history(`/modal/${modalId}`);
+  };
   return (
     <>
       <Contents>
@@ -133,7 +138,7 @@ const ExampleCard = ({ item }: IExampleCard) => {
           <Link to={item.link} target="_black">
             사이트 바로가기
           </Link>
-          <SeeMore>자세히 보기</SeeMore>
+          <SeeMore onClick={() => onBoxClick(item.id)}>자세히 보기</SeeMore>
         </HoverBox>
       </Contents>
     </>

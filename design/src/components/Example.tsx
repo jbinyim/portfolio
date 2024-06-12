@@ -10,11 +10,20 @@ const Section = styled.div`
 const MenuBox = styled.ul`
   width: fit-content;
   display: flex;
+  align-items: center;
   gap: 30px;
   padding: 10px 45px;
   background: ${(props) => props.theme.boxColor};
   border-radius: 40px;
   margin-bottom: 50px;
+  text-align: center;
+  @media ${(props) => props.theme.m} {
+    margin: 1000px auto 50px;
+    gap: 20px;
+  }
+  @media ${(props) => props.theme.xs} {
+    gap: 10px;
+  }
 `;
 
 const Menu = styled.li<{ $menuToggle: string }>`
@@ -50,6 +59,17 @@ const CardBox = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
+  @media ${(props) => props.theme.xl} {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media ${(props) => props.theme.l} {
+    grid-template-columns: repeat(2, 1fr);
+    height: 100%;
+  }
+  @media ${(props) => props.theme.m} {
+    grid-template-columns: repeat(1, 1fr);
+    height: 100%;
+  }
 `;
 
 const Example = () => {
@@ -68,7 +88,7 @@ const Example = () => {
           All
         </Menu>
         <Menu $menuToggle={menuToggle} onClick={() => onClickMenu("react")}>
-          React / Ts
+          React (Ts)
         </Menu>
         <Menu
           $menuToggle={menuToggle}
