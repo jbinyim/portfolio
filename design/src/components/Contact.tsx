@@ -94,7 +94,7 @@ const Contact = () => {
     <Container>
       <TitleBox>
         <h2>front-end</h2>
-        <p>봐주셔서 감사합니다 :)</p>
+        <p>Yim Jeong Bin</p>
       </TitleBox>
       <Text>
         프론트엔드 개발자로 성장하기 위해 낯선 기술에도 적극적으로 도전하고,

@@ -65,7 +65,6 @@ const Work = () => {
 
     const handleScroll = () => {
       const currentScroll = window.pageYOffset;
-      // const projectTop = projectRef.current?.offsetTop || 0;
       const exampleTop = exampleRef.current?.offsetTop || 0;
 
       if (isMobile) {

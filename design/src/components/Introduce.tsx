@@ -1,5 +1,7 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAnglesDown } from "@fortawesome/free-solid-svg-icons";
 
 const Container = styled.div`
   width: 100%;
@@ -72,12 +74,34 @@ const Img = styled.img`
   left: 50%;
   transform: translateX(-50%);
   height: 550px;
-  @media ${(props) => props.theme.m} {
+  @media ${(props) => props.theme.xl} {
     height: 450px;
   }
   @media ${(props) => props.theme.s} {
     height: 350px;
   }
+`;
+
+const updown = keyframes`
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100%{
+    transform: translateY(0);
+  }
+`;
+
+const IconBox = styled.span`
+  position: absolute;
+  bottom: 30px;
+  left: calc(50% - 8px);
+  right: 50%;
+  color: #fff;
+  font-size: 30px;
+  animation: ${updown} 1.5s infinite linear;
 `;
 
 const Introduce = () => {
@@ -97,6 +121,9 @@ const Introduce = () => {
         src="https://jbinyim12.cafe24.com/web/upload/captcha/me-removebg-preview.png"
         alt="인물사진"
       />
+      <IconBox>
+        <FontAwesomeIcon icon={faAnglesDown} />
+      </IconBox>
     </Container>
   );
 };

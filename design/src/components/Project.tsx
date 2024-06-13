@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { db } from "../db";
-import { Link, useNavigate, useMatch, PathMatch } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Container = styled.div`
   width: 100%;

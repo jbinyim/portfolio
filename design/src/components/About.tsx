@@ -23,7 +23,7 @@ const Contents = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  margin: 70px 0 80px;
+  margin: 70px auto 80px;
 `;
 
 const Img = styled.img`

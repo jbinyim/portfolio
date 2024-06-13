@@ -253,6 +253,20 @@ export const db = {
   ],
 };
 
+export interface DbData {
+  id: number;
+  type: string;
+  name: string;
+  catagory: string;
+  skill: string[];
+  day: string;
+  func: string[];
+  link: string;
+  github: string;
+  imgUrl: string[];
+  text: string;
+}
+
 export const skillLogo = {
   html: "https://jbinyim12.cafe24.com/web/upload/captcha/html5-original.png",
   css: "https://jbinyim12.cafe24.com/web/upload/captcha/css3-original.png",
@@ -268,16 +282,11 @@ export const skillLogo = {
   photoshop: "https://jbinyim12.cafe24.com/web/upload/captcha/image%205.png",
 };
 
-export interface DbData {
-  id: number;
-  type: string;
-  name: string;
-  catagory: string;
-  skill: string[];
-  day: string;
-  func: string[];
-  link: string;
-  github: string;
-  imgUrl: string[];
-  text: string;
-}
+export const skillDb = [
+  {
+    id: "html",
+    logo: "https://jbinyim12.cafe24.com/web/upload/captcha/html5-original.png",
+    text: "웹 표준을 준수하고, 구조에 따라 적절한 시맨틱 태그를 사용하여 마크업 할 수 있습니다",
+    title: "",
+  },
+];
