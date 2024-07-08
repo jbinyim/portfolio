@@ -24,6 +24,21 @@ export const db = {
       text: "친구와 함계한 프로젝트이며 웹 개발자라는 꿈을 갖게된 계기로 시작된 게임 전적 검색 사이트입니다. 게임회사에서 지원하는 API를 실시간으로 가져오며 게임플레이를 완료하면 해당 게임에 대한 정보들을 볼 수 있습니다. 회사에서 지원하는 API에는 하루 호출량이 정해져있어 랜더링 관리와 상태관리는데에 어려움이었습니다. 이러한 문제를 Recoil를 이용하여 관리하였습니다. 퍼블리셔 친구와 함께 하다보니 style-components를 사용하지 못 하여 불편함을 겪었으나 다양한 React Hook을 이용하여 해결하였습니다.",
     },
     {
+      id: 240701,
+      type: "react",
+      name: "넷플릭스",
+      catagory: "개인",
+      skill: ["react", "typescript", "react-query"],
+      day: "2024-07-01 ~ 2024-07-09",
+      func: ["넷플리스 기존 사이트를 클론 코딩한 사이트입니다."],
+      link: "",
+      github: "https://github.com/jbinyim/react-ex/tree/master/netflex",
+      imgUrl: [
+        "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-taillife-firebaseapp-diary-list.png",
+      ],
+      text: "",
+    },
+    {
       id: 240423,
       type: "react",
       name: "꼬리의 일상",
@@ -35,7 +50,7 @@ export const db = {
         "react-router-dom을 사용하여 다양한 페이지로의 라우팅을 설정했습니다.",
         "useReducer와 useContext를 사용하여 애플리케이션의 상태를 전역적으로 관리했습니다.",
         "사용자의 다이어리 데이터를 브라우저의 로컬 스토리지에 저장하여, 페이지를 새로고침하거나 다시 방문했을 때도 데이터를 유지할 수 있게 했습니다.",
-        "다이어리 항목을 생성(Create), 조회(Read), 수정(Update), 삭제(Delete)할 수 있습니다.",
+        "localhost를 이용하여 다이어리 항목을 생성(Create), 조회(Read), 수정(Update), 삭제(Delete)할 수 있습니다.",
       ],
       link: "https://taillife.firebaseapp.com",
       github: "https://github.com/jbinyim/react-ex/tree/master/taillife",
@@ -188,22 +203,6 @@ export const db = {
         "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-jb-findbooks-firebaseapp-2024-05-24-20_54_41.png",
       ],
       text: "제품 목록을 관리하고, 사용자가 제품을 검색하거나 카테고리별로 필터링하고, 가격에 따라 정렬할 수 있게 해주는 JavaScript 코드입니다. 기본적으로 제품 데이터를 가져와서 사용자의 입력에 따라 동적으로 제품 목록을 업데이트하는 기능을 수행합니다. 각각 신상품 순, 가격 내림차순, 가격 오름차순으로 제품을 정렬하고 검색어에 해당하는 제품만을 필터링하여 목록에 다시 표시합니다.",
-    },
-    {
-      id: 240424,
-      type: "react",
-      name: "넷플릭스",
-      catagory: "개인",
-      skill: ["react", "redux"],
-      day: "2024-04-23 ~ 2024-04-24",
-      func: ["react-redux"],
-      link: "https://jb-netiflx.firebaseapp.com",
-      github:
-        "https://github.com/jbinyim/EZENCLASS/tree/master/240423-netfilx/01-netiflx",
-      imgUrl: [
-        "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-jb-netiflx-web-app-2024-05-26-15_16_10.png",
-      ],
-      text: " useEffect 훅을 사용하여 컴포넌트가 마운트될 때 movieAction.getMovies() 액션을 디스패치합니다. 이는 Redux를 통해 영화 데이터를 비동기적으로 가져오는 역할을 합니다. useSelector 훅을 사용하여 Redux 스토어의 상태 중 영화 데이터와 로딩 상태를 추출합니다.",
     },
     {
       id: 240411,

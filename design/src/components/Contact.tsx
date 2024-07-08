@@ -10,7 +10,7 @@ const Container = styled.div`
 `;
 
 const TitleBox = styled.div`
-  padding-top: 200px;
+  padding-top: 20vh;
   text-align: center;
   position: relative;
   h2 {

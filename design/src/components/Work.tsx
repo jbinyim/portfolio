@@ -44,6 +44,7 @@ const ExampleBtn = styled.p<{ $textColor: number }>`
 
 const ProjectBox = styled.div`
   width: 100%;
+  overflow: hidden;
 `;
 
 const Work = () => {

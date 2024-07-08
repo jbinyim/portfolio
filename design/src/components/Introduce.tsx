@@ -75,6 +75,9 @@ const Img = styled.img`
   transform: translateX(-50%);
   height: 550px;
   @media ${(props) => props.theme.xl} {
+    height: 300px;
+  }
+  @media ${(props) => props.theme.l} {
     height: 450px;
   }
   @media ${(props) => props.theme.s} {

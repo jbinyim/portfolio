@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
 }
 body {
   font-family: "Noto Sans KR", sans-serif;
+  /* overflow-x: hidden; */
 }
 li {
   list-style: none;
