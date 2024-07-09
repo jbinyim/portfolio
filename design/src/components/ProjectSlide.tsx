@@ -1,111 +1,245 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Keyboard, Scrollbar, Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, Grid } from "swiper/modules";
 import styled from "styled-components";
-import { db, DbData } from "../db";
+import { db } from "../db";
+import { useMediaQuery } from "react-responsive";
+import { Link, useNavigate } from "react-router-dom";
 
 import "swiper/css";
+import "swiper/css/grid";
 import "swiper/css/scrollbar";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const ProjectSlideBox = styled.div`
+  height: 100vh;
+  position: relative;
   .swiper {
     width: 100%;
-    height: 100vh;
-    background: ${(props) => props.theme.boxColor};
-    border-radius: 5px;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: visible;
   }
 
   .swiper-slide {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+    background: ${(props) => props.theme.boxColor};
+    border-radius: 5px;
+    /* overflow: hidden; */
+    transition: all 0.3s;
+    height: 100%;
+    /* height: calc((100% - 30px) / 2) !important; */
+    &:hover {
+      transform: translateY(-10px);
+      .hoverBox {
+        opacity: 1;
+      }
+    }
   }
 
-  .swiper-slide img {
-    display: block;
-    width: 100%;
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: initial;
+    transform: translateY(30px);
+    background: ${(props) => props.theme.boxColor};
+    border-radius: 30px;
+    padding: 0 20px;
+    color: #fff;
+    z-index: 15;
+    &::after {
+      font-size: 30px;
+    }
   }
-  @media only screen and (min-width: 960px) {
-    .swiper-slide:first-child {
-      transition: transform 100ms;
+  .swiper-button-prev {
+    left: 35%;
+    @media ${(props) => props.theme.m} {
+      left: 30%;
     }
-
-    .swiper-slide:first-child img {
-      transition: box-shadow 500ms;
+  }
+  .swiper-button-next {
+    right: 35%;
+    @media ${(props) => props.theme.m} {
+      right: 30%;
     }
-
-    .swiper-slide.swiper-slide-active:first-child {
-      transform: translateX(50%);
-      z-index: 2;
+  }
+  .swiper-pagination {
+    bottom: 0;
+    transform: translateY(40px);
+    .swiper-pagination-bullet {
+      background: ${(props) => props.theme.boxColor};
+      opacity: 1;
     }
-
-    .swiper-slide.swiper-slide-active:first-child img {
-      box-shadow: 0px 32px 80px rgba(0, 0, 0, 0.35);
-    }
-
-    .swiper-slide:nth-child(2) {
-      transition: transform 100ms;
-    }
-
-    .swiper-slide.swiper-slide-next:nth-child(2) {
-      transform: translateX(55%);
-      z-index: 1;
-    }
-
-    .swiper[dir="rtl"] .swiper-slide.swiper-slide-active:first-child {
-      transform: translateX(-50%);
-    }
-
-    .swiper[dir="rtl"] .swiper-slide.swiper-slide-next:nth-child(2) {
-      transform: translateX(-55%);
+    .swiper-pagination-bullet-active {
+      background: #fff;
     }
   }
 `;
 
-const ProjectImg = styled.img`
+const Img = styled.div<{ $imgUrl: string }>`
   width: 100%;
-  height: 50%;
-  object-position: top;
-  object-fit: cover;
+  height: 45%;
+  background: url(${(props) => props.$imgUrl}) center/cover no-repeat;
+`;
+
+const TextBox = styled.div`
+  height: 55%;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+const Title = styled.h2`
+  font-size: 24px;
+  margin-bottom: 20px;
+`;
+
+const Text = styled.p`
+  font-size: 15px;
+  color: #9e9e9e;
+  margin-bottom: 6px;
+`;
+
+const TagBox = styled.div`
+  display: flex;
+  gap: 15px;
+`;
+
+const Tag = styled.span`
+  font-size: 12px;
+  padding: 5px;
+  background: #242424;
+`;
+
+const HoverBox = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: ${(props) => props.theme.boxColor};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.3s;
+  overflow: hidden;
+  a {
+    cursor: pointer;
+    text-align: center;
+    width: 200px;
+    color: #fff;
+    font-size: 20px;
+    letter-spacing: -1px;
+    border: 1px solid #fff;
+    padding: 10px;
+    transition: all 0.3s;
+    border-radius: 5px;
+    &:hover {
+      background: #fff;
+      color: #000;
+    }
+  }
+`;
+
+const HoverTitle = styled.h2`
+  margin-bottom: 30px;
+  font-size: 30px;
+`;
+
+const SeeMore = styled.p`
+  cursor: pointer;
+  text-align: center;
+  width: 200px;
+  color: #fff;
+  font-size: 20px;
+  border: 1px solid #fff;
+  padding: 10px;
+  transition: all 0.3s;
+  border-radius: 5px;
+  margin-top: 20px;
+  &:hover {
+    background: #fff;
+    color: #000;
+  }
 `;
 
 const ProjectSlide = () => {
+  const history = useNavigate();
+  const [offset, setOffset] = useState(4);
+  const l = useMediaQuery({ maxWidth: 1474, minWidth: 1205 });
+  const m = useMediaQuery({ maxWidth: 1205, minWidth: 855 });
+  const s = useMediaQuery({ maxWidth: 855, minWidth: 375 });
+  const xs = useMediaQuery({ maxWidth: 375, minWidth: 0 });
+
+  // let offset = 4;
+  useEffect(() => {
+    if (l) {
+      setOffset(3);
+    } else if (m) {
+      setOffset(2);
+    } else if (s) {
+      setOffset(1);
+    } else if (xs) {
+      setOffset(1);
+    }
+  }, [l, m, s]);
+
+  const onBoxClick = (modalId: number) => {
+    history(`/modal/${modalId}`);
+  };
+
   return (
-    <ProjectSlideBox>
-      <Swiper
-        slidesPerView={1}
-        centeredSlides={false}
-        slidesPerGroupSkip={1}
-        grabCursor={true}
-        keyboard={{
-          enabled: true,
-        }}
-        breakpoints={{
-          960: {
-            slidesPerView: 2,
-            slidesPerGroup: 2,
-          },
-        }}
-        scrollbar={true}
-        navigation={true}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Keyboard, Scrollbar, Navigation, Pagination]}
-        className="mySwiper"
-      >
-        {db.project.map((item) => (
-          <SwiperSlide>
-            <ProjectImg src={item.imgUrl[0]} alt="projecImg" />
-            <div></div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </ProjectSlideBox>
+    <>
+      <ProjectSlideBox id="project">
+        {db.project.length > 0 && (
+          <Swiper
+            slidesPerView={offset}
+            observer={true}
+            observeParents={true}
+            grid={{
+              rows: 2,
+            }}
+            spaceBetween={20}
+            navigation={true}
+            loop={true}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Grid, Pagination, Navigation]}
+            className="mySwiper"
+          >
+            {db.project.map((item) => (
+              <SwiperSlide key={item.id}>
+                {item.imgUrl[0] && <Img $imgUrl={item.imgUrl[0]} />}
+                <TextBox>
+                  <div>
+                    <Title>{item.name}</Title>
+                    <Text>{item.func[0]}</Text>
+                  </div>
+                  <TagBox>
+                    {item.skill.map((tag, idx) => (
+                      <Tag key={idx}>{tag}</Tag>
+                    ))}
+                  </TagBox>
+                </TextBox>
+                <HoverBox className="hoverBox">
+                  <HoverTitle>{item.name}</HoverTitle>
+                  <Link to={item.link} target="_black">
+                    사이트 바로가기
+                  </Link>
+                  <SeeMore onClick={() => onBoxClick(item.id)}>
+                    자세히 보기
+                  </SeeMore>
+                </HoverBox>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        )}
+      </ProjectSlideBox>
+    </>
   );
 };
 

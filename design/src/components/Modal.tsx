@@ -185,7 +185,7 @@ const Modal = ({ clickModal }: IModal) => {
         </CloseBox>
         <ContentBox>
           <ImgBox>
-            <Img $imgUrl={clickModal.imgUrl && clickModal.imgUrl[0]} />
+            <Img $imgUrl={clickModal.imgUrl && clickModal.imgUrl[1]} />
           </ImgBox>
           <TextBox>
             <h1>🔊 {clickModal.name}</h1>

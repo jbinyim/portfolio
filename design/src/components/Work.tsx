@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
-import Project from "./Project";
 import Example from "../components/Example";
+import ProjectSlide from "./ProjectSlide";
 
 const Container = styled.div`
   width: 100%;
@@ -109,7 +109,7 @@ const Work = () => {
       </SubNavBox>
       <ProjectBox>
         <div ref={projectRef}>
-          <Project />
+          <ProjectSlide />
         </div>
         <div ref={exampleRef}>
           <Example />

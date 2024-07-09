@@ -16,6 +16,7 @@ export const db = {
       link: "https://fcgg-6ccd7.web.app",
       github: "https://github.com/jbinyim/fconline-record",
       imgUrl: [
+        "https://jbinyim12.cafe24.com/web/upload/captcha/image%205.png",
         "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-xn-iy5bf585f88b-2024-06-10-14_21_38.png",
         "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-xn-iy5bf585f88b-2024-06-10-13_12_16.png",
         "https://jbinyim12.cafe24.com/web/upload/captcha/%EA%B2%BD%EA%B8%B0%EC%A0%95%EB%B3%B4.png",
@@ -31,10 +32,13 @@ export const db = {
       skill: ["react", "typescript", "react-query"],
       day: "2024-07-01 ~ 2024-07-09",
       func: ["넷플리스 기존 사이트를 클론 코딩한 사이트입니다."],
-      link: "",
+      link: "https://yjb-netflix.web.app",
       github: "https://github.com/jbinyim/react-ex/tree/master/netflex",
       imgUrl: [
-        "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-taillife-firebaseapp-diary-list.png",
+        "https://jbinyim12.cafe24.com/web/upload/captcha/image%206.png",
+        "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-yjb-netflix-web-app-2024-07-08-22_17_22.png",
+        "https://jbinyim12.cafe24.com/web/upload/captcha/%ED%99%94%EB%A9%B4%20%EC%BA%A1%EC%B2%98%202024-07-08%20221329.png",
+        "https://jbinyim12.cafe24.com/web/upload/captcha/%ED%99%94%EB%A9%B4%20%EC%BA%A1%EC%B2%98%202024-07-08%20221258.png",
       ],
       text: "",
     },
@@ -55,6 +59,7 @@ export const db = {
       link: "https://taillife.firebaseapp.com",
       github: "https://github.com/jbinyim/react-ex/tree/master/taillife",
       imgUrl: [
+        "https://jbinyim12.cafe24.com/web/upload/captcha/%EA%BC%AC%EB%A6%AC%201.png",
         "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-taillife-web-app-2024-05-18-14_32_56.png",
         "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-taillife-detail.png",
         "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-taillife-firebaseapp-diary-list.png",
@@ -80,6 +85,7 @@ export const db = {
       link: "https://theventi-d1217.firebaseapp.com",
       github: "https://github.com/jbinyim/team-project-theventi.git",
       imgUrl: [
+        "https://jbinyim12.cafe24.com/web/upload/captcha/image%207.png",
         "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-theventi-d1217-web-app-common-common-html-2024-05-17-01_07_19.png",
         "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-theventi-d1217-firebaseapp-2024-06-11-11_44_15.png",
         "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-theventi-d1217-firebaseapp-community-evented-event-html-2024-06-11-11_44_41.png",
