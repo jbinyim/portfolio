@@ -73,6 +73,12 @@ const HeaderBox = styled.div`
   display: flex;
   justify-content: center;
   gap: 200px;
+  @media ${(props) => props.theme.s} {
+    gap: 100px;
+  }
+  @media ${(props) => props.theme.xs} {
+    gap: 60px;
+  }
 `;
 
 const BtnBox = styled.div`
