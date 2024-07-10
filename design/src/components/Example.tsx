@@ -81,7 +81,7 @@ const Example = () => {
   useEffect(() => {}, [menuToggle]);
 
   return (
-    <Section id="example">
+    <Section>
       <MenuBox>
         <Menu $menuToggle={menuToggle} onClick={() => onClickMenu("all")}>
           All
@@ -96,7 +96,7 @@ const Example = () => {
           Js
         </Menu>
       </MenuBox>
-      <CardBox>
+      <CardBox id="example">
         <ExampleCardBox menuToggle={menuToggle} />
       </CardBox>
     </Section>

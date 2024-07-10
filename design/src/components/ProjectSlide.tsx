@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Grid } from "swiper/modules";
 import styled from "styled-components";
@@ -56,11 +56,17 @@ const ProjectSlideBox = styled.div`
     @media ${(props) => props.theme.m} {
       left: 30%;
     }
+    @media ${(props) => props.theme.s} {
+      left: 20%;
+    }
   }
   .swiper-button-next {
     right: 35%;
     @media ${(props) => props.theme.m} {
       right: 30%;
+    }
+    @media ${(props) => props.theme.s} {
+      right: 20%;
     }
   }
   .swiper-pagination {
@@ -80,6 +86,7 @@ const Img = styled.div<{ $imgUrl: string }>`
   width: 100%;
   height: 45%;
   background: url(${(props) => props.$imgUrl}) center/cover no-repeat;
+  border-radius: 5px 5px 0 0;
 `;
 
 const TextBox = styled.div`
@@ -168,24 +175,34 @@ const SeeMore = styled.p`
 
 const ProjectSlide = () => {
   const history = useNavigate();
-  const [offset, setOffset] = useState(4);
+  // const [offset, setOffset] = useState(4);
   const l = useMediaQuery({ maxWidth: 1474, minWidth: 1205 });
   const m = useMediaQuery({ maxWidth: 1205, minWidth: 855 });
-  const s = useMediaQuery({ maxWidth: 855, minWidth: 375 });
-  const xs = useMediaQuery({ maxWidth: 375, minWidth: 0 });
+  const s = useMediaQuery({ maxWidth: 855, minWidth: 400 });
+  const xs = useMediaQuery({ maxWidth: 400, minWidth: 0 });
 
-  // let offset = 4;
-  useEffect(() => {
-    if (l) {
-      setOffset(3);
-    } else if (m) {
-      setOffset(2);
-    } else if (s) {
-      setOffset(1);
-    } else if (xs) {
-      setOffset(1);
-    }
-  }, [l, m, s]);
+  let offset = 4;
+  if (l) {
+    offset = 3;
+  } else if (m) {
+    offset = 2;
+  } else if (s) {
+    offset = 1;
+  } else if (xs) {
+    offset = 1;
+  }
+
+  // useEffect(() => {
+  //   if (l) {
+  //     setOffset(3);
+  //   } else if (m) {
+  //     setOffset(2);
+  //   } else if (s) {
+  //     setOffset(1);
+  //   } else if (xs) {
+  //     setOffset(1);
+  //   }
+  // }, [l, m, s]);
 
   const onBoxClick = (modalId: number) => {
     history(`/modal/${modalId}`);

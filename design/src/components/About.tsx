@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import Interview from "../components/Interview";
 import Skill from "./Skill";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Container = styled.div`
   width: 100%;
@@ -45,10 +47,24 @@ const HashTag = styled.div`
 `;
 
 const About = () => {
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from(".aboutContents", {
+      y: -50,
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".aboutContents",
+        start: "top center",
+        end: "bottom center",
+        scrub: 2,
+      },
+    });
+  }, []);
   return (
     <Container>
       <h1>About me</h1>
-      <Contents>
+      <Contents className="aboutContents">
         <Img
           src="https://jbinyim12.cafe24.com/web/upload/captcha/image_72-removebg-preview.png"
           alt=""

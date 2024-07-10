@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Container = styled.div`
   width: 100%;
@@ -90,27 +92,51 @@ const Contact = () => {
     alert(`${text}를 클립보드에 복사했습니다.`);
     navigator.clipboard.writeText(text);
   };
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from(".contactBox", {
+      y: -100,
+      opacity: 0,
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: ".contactBox",
+        start: "top top",
+        end: "bottom center",
+        scrub: 2,
+      },
+    });
+  }, []);
+
   return (
     <Container>
-      <TitleBox>
-        <h2>front-end</h2>
-        <p>Yim Jeong Bin</p>
-      </TitleBox>
-      <Text>
-        프론트엔드 개발자로 성장하기 위해 낯선 기술에도 적극적으로 도전하고,
-        <br />
-        항상 사용자의 관점에서 생각하며 사용하기 좋은 서비스를 만들고 싶습니다.
-      </Text>
-      <HeaderBox>
-        <BtnBox>
-          <p onClick={() => onClickCopy("jbinyim12@naver.com")}>Email</p>
-        </BtnBox>
-        <BtnBox>
-          <Link to={`https://github.com/jbinyim`} target="_blank">
-            Github
-          </Link>
-        </BtnBox>
-      </HeaderBox>
+      <div className="contactBox">
+        <TitleBox>
+          <h2>front-end</h2>
+          <p>Yim Jeong Bin</p>
+        </TitleBox>
+        <Text>
+          프론트엔드 개발자로 성장하기 위해 낯선 기술에도 적극적으로 도전하고,
+          <br />
+          항상 사용자의 관점에서 생각하며 사용하기 좋은 서비스를 만들고
+          싶습니다.
+        </Text>
+        <HeaderBox>
+          <BtnBox>
+            <p onClick={() => onClickCopy("jbinyim12@naver.com")}>Email</p>
+          </BtnBox>
+          <BtnBox>
+            <Link to={`https://github.com/jbinyim`} target="_blank">
+              Github
+            </Link>
+          </BtnBox>
+          <BtnBox>
+            <Link to={`https://velog.io/@jbinyim12/posts`} target="_blank">
+              Velog
+            </Link>
+          </BtnBox>
+        </HeaderBox>
+      </div>
     </Container>
   );
 };

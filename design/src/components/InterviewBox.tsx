@@ -45,7 +45,7 @@ const InterviewBox = ({ q, a }: IInterviewBox) => {
   };
 
   return (
-    <Container onClick={onClickToggle}>
+    <Container className="interviewBox" onClick={onClickToggle}>
       <Title>Q. {q}</Title>
       <Text
         $toggle={toggle}

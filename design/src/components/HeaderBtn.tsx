@@ -24,14 +24,12 @@ const BtnBox = styled.div`
 `;
 
 const HeaderBtn = () => {
-  const onClickCopy = (text: string) => {
-    alert(`${text}를 클립보드에 복사했습니다.`);
-    navigator.clipboard.writeText(text);
-  };
   return (
     <HeaderBox>
       <BtnBox>
-        <p onClick={() => onClickCopy("jbinyim12@naver.com")}>Email</p>
+        <Link to={`https://velog.io/@jbinyim12/posts`} target="_blank">
+          velog
+        </Link>
       </BtnBox>
       <BtnBox>
         <Link to={`https://github.com/jbinyim`} target="_blank">

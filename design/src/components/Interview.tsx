@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import InterviewBox from "./InterviewBox";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Container = styled.div`
   max-width: 1070px;
@@ -14,9 +16,15 @@ const Title = styled.h2`
 `;
 
 const Interview = () => {
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from(".interviewBox", {
+      y: 50,
+    });
+  }, []);
   return (
-    <Container>
-      <h2>Interview</h2>
+    <Container className="interviewBox">
+      <Title>Interview</Title>
       <InterviewBox
         q="프론트엔드로 지원한 이유?"
         a="친구와 함께 하던 게임의 기존 전적 검색 사이트가 운영을

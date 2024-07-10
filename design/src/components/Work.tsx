@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import Example from "../components/Example";
 import ProjectSlide from "./ProjectSlide";
+import { useMediaQuery } from "react-responsive";
 
 const Container = styled.div`
   width: 100%;
@@ -53,6 +54,8 @@ const Work = () => {
   const projectRef = useRef<HTMLDivElement>(null);
   const exampleRef = useRef<HTMLDivElement>(null);
 
+  const xs = useMediaQuery({ maxWidth: 400 });
+
   const movePage = (ref: React.RefObject<HTMLDivElement>) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -87,26 +90,31 @@ const Work = () => {
 
   return (
     <Container>
-      <SubNavBox $isMobile={isMobile}>
-        <SubNav>
-          <ProjectBtn
-            className="project"
-            onClick={() => movePage(projectRef)}
-            $textColor={workBtn}
-          >
-            Project
-          </ProjectBtn>
-        </SubNav>
-        <SubNav>
-          <ExampleBtn
-            className="example"
-            onClick={() => movePage(exampleRef)}
-            $textColor={workBtn}
-          >
-            Example
-          </ExampleBtn>
-        </SubNav>
-      </SubNavBox>
+      {xs ? (
+        <></>
+      ) : (
+        <SubNavBox $isMobile={isMobile}>
+          <SubNav>
+            <ProjectBtn
+              className="project"
+              onClick={() => movePage(projectRef)}
+              $textColor={workBtn}
+            >
+              Project
+            </ProjectBtn>
+          </SubNav>
+          <SubNav>
+            <ExampleBtn
+              className="example"
+              onClick={() => movePage(exampleRef)}
+              $textColor={workBtn}
+            >
+              Example
+            </ExampleBtn>
+          </SubNav>
+        </SubNavBox>
+      )}
+
       <ProjectBox>
         <div ref={projectRef}>
           <ProjectSlide />

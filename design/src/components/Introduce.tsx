@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesDown } from "@fortawesome/free-solid-svg-icons";
+import gsap from "gsap";
 
 const Container = styled.div`
   width: 100%;
@@ -15,12 +16,12 @@ const Container = styled.div`
 const TitleBox = styled.div`
   text-align: center;
   position: relative;
-  h2 {
+  .frontendText {
     font-size: 130px;
     text-transform: uppercase;
     color: #fff;
   }
-  p {
+  .myName {
     width: 100%;
     font-size: 48px;
     letter-spacing: -1px;
@@ -30,27 +31,27 @@ const TitleBox = styled.div`
     transform: translateX(-50%);
   }
   @media ${(props) => props.theme.m} {
-    h2 {
+    .frontendText {
       margin-top: 50px;
       font-size: 100px;
     }
-    p {
+    .myName {
       font-size: 30px;
     }
   }
   @media ${(props) => props.theme.s} {
-    h2 {
+    .frontendText {
       font-size: 50px;
     }
-    p {
+    .myName {
       font-size: 20px;
     }
   }
   @media ${(props) => props.theme.xs} {
-    h2 {
+    .frontendText {
       font-size: 40px;
     }
-    p {
+    .myName {
       font-size: 18px;
     }
   }
@@ -108,19 +109,38 @@ const IconBox = styled.span`
 `;
 
 const Introduce = () => {
+  useEffect(() => {
+    const tl = gsap.timeline();
+    gsap.from(".frontendText", {
+      opacity: 0,
+      duration: 1,
+      delay: 1,
+    });
+
+    // .myName과 .frontendText의 y 값이 함께 움직이도록 처리
+    tl.from([".myName", ".frontendText"], {
+      y: 150,
+      duration: 1,
+      delay: 1.5, // .frontendText의 opacity가 먼저 나온 후 1.5초 지연
+      zIndex: 10,
+    })
+      .from(".descMe", { opacity: 0 })
+      .from(".imgMe", { opacity: 0 });
+  }, []);
   return (
     <Container>
       <TitleBox>
-        <h2>front-end</h2>
-        <p>
+        <h2 className="frontendText">front-end</h2>
+        <p className="myName">
           프론트엔드 개발자 <b>임정빈</b>입니다.
         </p>
       </TitleBox>
-      <Text>
+      <Text className="descMe">
         최신 웹 기술을 빠르게 배우며 사용자 친화적인 웹사이트를 만드는 꿈을
         키우는 중 입니다.
       </Text>
       <Img
+        className="imgMe"
         src="https://jbinyim12.cafe24.com/web/upload/captcha/me-removebg-preview.png"
         alt="인물사진"
       />

@@ -1,5 +1,5 @@
 import React from "react";
-import { db, DbData } from "../db";
+import { DbData } from "../db";
 import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
 
