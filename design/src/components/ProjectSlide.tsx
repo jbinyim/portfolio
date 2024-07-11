@@ -15,6 +15,7 @@ import "swiper/css/pagination";
 const ProjectSlideBox = styled.div`
   height: 100vh;
   position: relative;
+  margin-bottom: 100px;
   .swiper {
     width: 100%;
     height: 100%;
@@ -126,6 +127,7 @@ const HoverBox = styled.div`
   width: 100%;
   height: 100%;
   background: ${(props) => props.theme.boxColor};
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -211,6 +213,7 @@ const ProjectSlide = () => {
   return (
     <>
       <ProjectSlideBox id="project">
+        {/* <p>카드에 마우스를 올리시면 자세한 정보를 보실수 있습니다.</p> */}
         {db.project.length > 0 && (
           <Swiper
             slidesPerView={offset}

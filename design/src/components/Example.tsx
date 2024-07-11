@@ -22,8 +22,9 @@ const MenuBox = styled.ul`
     margin: 0px auto 50px;
     gap: 20px;
   }
-  @media ${(props) => props.theme.xs} {
+  @media ${(props) => props.theme.s} {
     gap: 10px;
+    padding: 10px 30px;
   }
 `;
 
