@@ -24,6 +24,19 @@ export const db = {
       text: "친구와 함계한 프로젝트이며 웹 개발자라는 꿈을 갖게된 계기로 시작된 게임 전적 검색 사이트입니다. 게임회사에서 지원하는 API를 실시간으로 가져오며 게임플레이를 완료하면 해당 게임에 대한 정보들을 볼 수 있습니다. 회사에서 지원하는 API에는 하루 호출량이 정해져있어 랜더링 관리와 상태관리는데에 어려움이었습니다. 이러한 문제를 Recoil를 이용하여 관리하였습니다. 퍼블리셔 친구와 함께 하다보니 style-components를 사용하지 못 하여 불편함을 겪었으나 다양한 React Hook을 이용하여 해결하였습니다.",
     },
     {
+      id: 240711,
+      type: "react",
+      name: "컴패션 클론코딩",
+      catagory: "개인",
+      skill: ["react", "typescript", "react-query"],
+      day: "2024-07-11 ~ 2024-07-09",
+      func: ["기존 컴패션 사이트를 클론 코딩한 사이트입니다."],
+      link: "",
+      github: "https://github.com/jbinyim/compassion-clone",
+      imgUrl: ["https://jbinyim12.cafe24.com/web/upload/captcha/image%208.png"],
+      text: "",
+    },
+    {
       id: 240701,
       type: "react",
       name: "넷플릭스",
@@ -278,28 +291,91 @@ export interface DbData {
 }
 
 export const skillLogo = {
-  html: "https://jbinyim12.cafe24.com/web/upload/captcha/html5-original.png",
-  css: "https://jbinyim12.cafe24.com/web/upload/captcha/css3-original.png",
-  scss: "https://jbinyim12.cafe24.com/web/upload/captcha/sass-original.png",
-  js: "https://jbinyim12.cafe24.com/web/upload/captcha/Vector.png",
-  ts: "https://jbinyim12.cafe24.com/web/upload/captcha/ts.png",
-  react: "https://jbinyim12.cafe24.com/web/upload/captcha/react.png",
-  git: "https://jbinyim12.cafe24.com/web/upload/captcha/git.png",
-  firebase:
-    "https://jbinyim12.cafe24.com/web/upload/captcha/firebase-plain.png",
-  figma: "https://jbinyim12.cafe24.com/web/upload/captcha/figma-original.png",
-  illustrator: "https://jbinyim12.cafe24.com/web/upload/captcha/image%204.png",
-  photoshop: "https://jbinyim12.cafe24.com/web/upload/captcha/image%205.png",
+  common: [
+    {
+      name: "Html5",
+      img: "https://jbinyim12.cafe24.com/web/upload/captcha/html5-original.png",
+    },
+    {
+      name: "Css3",
+      img: "https://jbinyim12.cafe24.com/web/upload/captcha/css3-original.png",
+    },
+    {
+      name: "JavaScript",
+      img: "https://jbinyim12.cafe24.com/web/upload/captcha/Vector.png",
+    },
+  ],
+  frontend: [
+    {
+      name: "React.js",
+      img: "https://jbinyim12.cafe24.com/web/upload/captcha/react.png",
+    },
+    {
+      name: "Sass",
+      img: "https://jbinyim12.cafe24.com/web/upload/captcha/sass-original.png",
+    },
+    {
+      name: "TypeScript",
+      img: "https://jbinyim12.cafe24.com/web/upload/captcha/ts.png",
+    },
+    {
+      name: "Styled-Components",
+      img: "https://jbinyim12.cafe24.com/web/upload/captcha/styledlogo.png",
+    },
+    {
+      name: "React-Query",
+      img: "https://jbinyim12.cafe24.com/web/upload/captcha/react-query-logo.png",
+    },
+    {
+      name: "Redux",
+      img: "https://jbinyim12.cafe24.com/web/upload/captcha/redux-logo.png",
+    },
+    {
+      name: "Recoil",
+      img: "https://jbinyim12.cafe24.com/web/upload/captcha/react-recoil-logo.png",
+    },
+  ],
+  tool: [
+    {
+      name: "GitHub",
+      img: "https://jbinyim12.cafe24.com/web/upload/captcha/git.png",
+    },
+    {
+      name: "Firebase",
+      img: "https://jbinyim12.cafe24.com/web/upload/captcha/firebase-plain.png",
+    },
+    {
+      name: "Figma",
+      img: "https://jbinyim12.cafe24.com/web/upload/captcha/figma-original.png",
+    },
+    {
+      name: "Slack",
+      img: "https://jbinyim12.cafe24.com/web/upload/captcha/slack-logo.png",
+    },
+    {
+      name: "VSCode",
+      img: "https://jbinyim12.cafe24.com/web/upload/captcha/vscode-logo.png",
+    },
+  ],
+  etc: [
+    {
+      name: "Node.js",
+      img: "https://jbinyim12.cafe24.com/web/upload/captcha/node-logo.png",
+    },
+    {
+      name: "MongoDb",
+      img: "https://jbinyim12.cafe24.com/web/upload/captcha/mongodb-logo.png",
+    },
+    {
+      name: "Illustrator",
+      img: "https://jbinyim12.cafe24.com/web/upload/captcha/image%204.png",
+    },
+    {
+      name: "Photoshop",
+      img: "https://jbinyim12.cafe24.com/web/upload/captcha/image%205.png",
+    },
+  ],
 };
-
-export const skillDb = [
-  {
-    id: "html",
-    logo: "https://jbinyim12.cafe24.com/web/upload/captcha/html5-original.png",
-    text: "웹 표준을 준수하고, 구조에 따라 적절한 시맨틱 태그를 사용하여 마크업 할 수 있습니다",
-    title: "",
-  },
-];
 
 export const interviewDb = [
   {

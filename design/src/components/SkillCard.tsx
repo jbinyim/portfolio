@@ -1,72 +1,73 @@
 import React from "react";
 import styled from "styled-components";
+import { skillLogo } from "../db";
 
 const Container = styled.div`
-  height: 100%;
-  padding: 5px 2px;
-  border: 1px solid ${(props) => props.theme.boxColor};
-  background: ${(props) => props.theme.boxColor};
-  border-radius: 10px;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
 `;
 
 const SkillBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  padding: 5px;
-`;
-
-const TitleBox = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  margin-bottom: 10px;
-`;
-
-const Img = styled.span<{ $skillLogo: string }>`
-  display: inline-block;
-  background: url(${(props) => props.$skillLogo}) center/cover no-repeat;
-  width: 30px;
-  height: 30px;
-`;
-
-const Title = styled.h2`
-  margin-top: 5px;
-  font-size: 20px;
-  font-weight: bold;
+  min-width: 100px;
+  text-align: center;
+  /* border: 1px solid #fff; */
+  border-radius: 5px;
+  background: ${(props) => props.theme.boxColor};
 `;
 
 const Text = styled.p`
   font-size: 16px;
-  line-height: 1.4rem;
-  @media (max-width: 800px) {
-    font-size: 14px;
-  }
-  @media (max-width: 650px) {
-    font-size: 13px;
-  }
+  /* border-bottom: 1px solid #fff; */
+  padding: 8px 5px;
 `;
 
-interface SkillLogoParam {
-  skillLogo: string;
-  chLogo?: string;
-  title?: string;
-  text: string;
+const ImgBox = styled.div`
+  padding: 10px 5px;
+`;
+
+const Img = styled.img`
+  width: 72px;
+  height: 72px;
+`;
+
+interface SkillI {
+  name: string;
+  img: string;
 }
 
-const SkillCard = ({ skillLogo, chLogo, title, text }: SkillLogoParam) => {
-  return (
-    <Container>
-      <SkillBox>
-        <TitleBox>
-          <Img $skillLogo={skillLogo} />
-          {chLogo ? <Img $skillLogo={chLogo} /> : ""}
-          <Title>{title}</Title>
-        </TitleBox>
-        <Text>{text}</Text>
-      </SkillBox>
-    </Container>
-  );
+interface SkillCardI {
+  skillName: string;
+}
+
+const SkillCard = ({ skillName }: SkillCardI) => {
+  const renderSkills = (skills: SkillI[]) => {
+    return (
+      <Container>
+        {skills.map((item, idx) => (
+          <SkillBox key={idx}>
+            <Text>{item.name}</Text>
+            <ImgBox>
+              <Img src={item.img} alt="logoImg" />
+            </ImgBox>
+          </SkillBox>
+        ))}
+      </Container>
+    );
+  };
+
+  switch (skillName) {
+    case "common":
+      return renderSkills(skillLogo.common);
+    case "frontend":
+      return renderSkills(skillLogo.frontend);
+    case "tool":
+      return renderSkills(skillLogo.tool);
+    case "etc":
+      return renderSkills(skillLogo.etc);
+    default:
+      return <div>5</div>;
+  }
 };
 
 export default SkillCard;
