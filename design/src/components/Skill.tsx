@@ -13,10 +13,17 @@ const Title = styled.div`
   font-weight: bold;
 `;
 
-const SubTitle = styled.h4`
+const SubTitle = styled.li`
   font-size: 25px;
   font-weight: 600;
   margin-bottom: 20px;
+  list-style: square;
+`;
+
+const Waring = styled.span`
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
 `;
 
 const Skill = () => {
@@ -29,8 +36,10 @@ const Skill = () => {
       <SkillCard skillName="frontend" />
       <SubTitle>Tool</SubTitle>
       <SkillCard skillName="tool" />
-      <SubTitle>ETC</SubTitle>
-      <p>사용 경험만 있는 기술</p>
+      <SubTitle>
+        ETC <Waring>(사용 경험만 있는 기술)</Waring>
+      </SubTitle>
+      <Waring></Waring>
       <SkillCard skillName="etc" />
     </Container>
   );

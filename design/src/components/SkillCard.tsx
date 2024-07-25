@@ -4,21 +4,60 @@ import { skillLogo } from "../db";
 
 const Container = styled.div`
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
+  @media ${(props) => props.theme.m} {
+    justify-content: center;
+    gap: 5px;
+  }
 `;
 
 const SkillBox = styled.div`
   min-width: 100px;
   text-align: center;
-  /* border: 1px solid #fff; */
   border-radius: 5px;
   background: ${(props) => props.theme.boxColor};
+  position: relative;
+  &:hover {
+    .ddd {
+      display: block;
+      @media ${(props) => props.theme.mobile} {
+        display: none;
+      }
+    }
+  }
+`;
+
+const HoverBox = styled.div<{ $colors: string }>`
+  display: none;
+  width: 240px;
+  height: auto;
+  position: absolute;
+  bottom: 150px;
+  left: 0;
+  z-index: 1;
+  background: ${(props) => props.$colors};
+  border-radius: 5px;
+  padding: 8px 6px;
+  @media ${(props) => props.theme.m} {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+`;
+
+const HoverTitle = styled.p`
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+`;
+
+const HoverText = styled(HoverTitle)`
+  font-weight: 400;
 `;
 
 const Text = styled.p`
   font-size: 16px;
-  /* border-bottom: 1px solid #fff; */
   padding: 8px 5px;
 `;
 
@@ -34,6 +73,8 @@ const Img = styled.img`
 interface SkillI {
   name: string;
   img: string;
+  desc: string;
+  colors: string;
 }
 
 interface SkillCardI {
@@ -46,9 +87,18 @@ const SkillCard = ({ skillName }: SkillCardI) => {
       <Container>
         {skills.map((item, idx) => (
           <SkillBox key={idx}>
+            <HoverBox className="ddd" $colors={item.colors}>
+              <HoverTitle>{item.name}</HoverTitle>
+              <HoverText>{item.desc}</HoverText>
+            </HoverBox>
             <Text>{item.name}</Text>
             <ImgBox>
-              <Img src={item.img} alt="logoImg" />
+              <Img
+                src={item.img}
+                alt="logoImg"
+                loading="lazy"
+                decoding="async"
+              />
             </ImgBox>
           </SkillBox>
         ))}
@@ -66,7 +116,7 @@ const SkillCard = ({ skillName }: SkillCardI) => {
     case "etc":
       return renderSkills(skillLogo.etc);
     default:
-      return <div>5</div>;
+      return <div>Loadinig...</div>;
   }
 };
 

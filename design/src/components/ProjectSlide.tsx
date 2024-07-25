@@ -96,17 +96,35 @@ const TextBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media ${(props) => props.theme.notebook} {
+    padding: 20px 20px;
+  }
+  @media ${(props) => props.theme.l} {
+    padding: 30px 20px;
+  }
 `;
 
 const Title = styled.h2`
   font-size: 24px;
   margin-bottom: 20px;
+  @media ${(props) => props.theme.notebook} {
+    margin-bottom: 15px;
+  }
+  @media ${(props) => props.theme.l} {
+    margin-bottom: 20px;
+  }
 `;
 
 const Text = styled.p`
   font-size: 15px;
   color: #9e9e9e;
   margin-bottom: 6px;
+  @media ${(props) => props.theme.notebook} {
+    margin-bottom: 12px;
+  }
+  @media ${(props) => props.theme.l} {
+    margin-bottom: 6px;
+  }
 `;
 
 const TagBox = styled.div`
