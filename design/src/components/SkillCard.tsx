@@ -115,6 +115,8 @@ const SkillCard = ({ skillName }: SkillCardI) => {
       return renderSkills(skillLogo.tool);
     case "etc":
       return renderSkills(skillLogo.etc);
+    case "backend":
+      return renderSkills(skillLogo.backend);
     default:
       return <div>Loadinig...</div>;
   }

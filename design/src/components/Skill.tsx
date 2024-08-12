@@ -34,6 +34,8 @@ const Skill = () => {
       <SkillCard skillName="common" />
       <SubTitle>FrontEnd</SubTitle>
       <SkillCard skillName="frontend" />
+      <SubTitle>BackEnd</SubTitle>
+      <SkillCard skillName="backend" />
       <SubTitle>Tool</SubTitle>
       <SkillCard skillName="tool" />
       <SubTitle>

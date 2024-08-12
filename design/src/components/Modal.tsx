@@ -95,6 +95,11 @@ const TextBox = styled.div`
   gap: 10px;
 `;
 
+const Ing = styled.span`
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.7);
+`;
+
 const ProjectText = styled.p`
   margin-top: 10px;
   margin-bottom: 20px;
@@ -188,7 +193,10 @@ const Modal = ({ clickModal }: IModal) => {
             <Img $imgUrl={clickModal.imgUrl && clickModal.imgUrl[1]} />
           </ImgBox>
           <TextBox>
-            <h1>🔊 {clickModal.name}</h1>
+            <h1>
+              🔊 {clickModal.name}{" "}
+              {clickModal.ing && <Ing>({clickModal.ing})</Ing>}
+            </h1>
             <ProjectText>{clickModal.catagory}프로젝트</ProjectText>
             <MainSkill>
               <Subtitle>📅 작업기간</Subtitle>

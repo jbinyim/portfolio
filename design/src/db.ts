@@ -8,7 +8,7 @@ export const db = {
       skill: ["react", "typescript", "react-query"],
       day: "2024-05-01 ~ 2024-06-09",
       func: [
-        "fc온라인 API를 활용해 만들어진 전적검색 사이트입니다.",
+        "넥슨 오픈 API를 활용해 만들어진 전적검색 사이트입니다.",
         "react-router-dom을 사용하여 다양한 페이지로의 라우팅을 설정했습니다.",
         "react-query를 이용하여 실시간 api 값을 가져옵니다.",
       ],
@@ -27,6 +27,7 @@ export const db = {
       id: 240711,
       type: "react",
       name: "컴패션 클론코딩",
+      ing: "현재 개발 진행중입니다.",
       catagory: "개인",
       skill: ["react", "typescript", "react-query"],
       day: "2024-07-11 ~ 2024-07-09",
@@ -34,6 +35,20 @@ export const db = {
       link: "",
       github: "https://github.com/jbinyim/compassion-clone",
       imgUrl: ["https://jbinyim12.cafe24.com/web/upload/captcha/image%208.png"],
+      text: "",
+    },
+    {
+      id: 240805,
+      type: "node",
+      name: "블로그",
+      ing: "현재 개발 진행중입니다.",
+      catagory: "개인",
+      skill: ["node", "mongoDB", "react/ts"],
+      day: "2024-08-05 ~ ",
+      func: ["개인 기록 저장 블로그입니다."],
+      link: "",
+      github: "https://github.com/jbinyim/blog",
+      imgUrl: [],
       text: "",
     },
     {
@@ -280,6 +295,7 @@ export interface DbData {
   id: number;
   type: string;
   name: string;
+  ing?: string;
   catagory: string;
   skill: string[];
   day: string;
@@ -333,7 +349,7 @@ export const skillLogo = {
     {
       name: "Redux",
       img: "https://jbinyim12.cafe24.com/web/upload/captcha/redux-logo.png",
-      desc: "Redux의 동작 흐름에 대해 이해하고 있고, Redux-Toolkit과 TypeScript를 활용한 코드를 구현할 수 있습니다.",
+      desc: "Redux의 동작 흐름에 대해 이해하고 있고, Redux-Toolkit을 활용한 코드를 구현할 수 있습니다.",
       colors: "#764ABC",
     },
     {
@@ -353,6 +369,20 @@ export const skillLogo = {
       img: "https://jbinyim12.cafe24.com/web/upload/captcha/styledlogo.png",
       desc: "전역 스타일 설정을 할 수 있고, TypeScript를 적용해서 코드를 구현할 수 있습니다.",
       colors: "#DB7093",
+    },
+  ],
+  backend: [
+    {
+      name: "Node.js",
+      img: "https://jbinyim12.cafe24.com/web/upload/captcha/node-logo.png",
+      desc: "블로그를 통해 CRUD이용하여 만들어 본 경험이 있습니다. 토큰을 이용하여 회원가입/로그인 기능을 구현보았습니다.",
+      colors: "#8CC84B",
+    },
+    {
+      name: "MongoDb",
+      img: "https://jbinyim12.cafe24.com/web/upload/captcha/mongodb-logo.png",
+      desc: "Node를 이용하여 연갈하고 데이터를 CRUD하기 위해 작성해 본 경험이 있습니다.",
+      colors: "#47A248",
     },
   ],
   tool: [
@@ -388,18 +418,6 @@ export const skillLogo = {
     },
   ],
   etc: [
-    {
-      name: "Node.js",
-      img: "https://jbinyim12.cafe24.com/web/upload/captcha/node-logo.png",
-      desc: "간단한 CRUD를 만들어 본 경험이 있습니다.",
-      colors: "#8CC84B",
-    },
-    {
-      name: "MongoDb",
-      img: "https://jbinyim12.cafe24.com/web/upload/captcha/mongodb-logo.png",
-      desc: "깊은 개념에 대한 지식은 부족하고 간단한 데이터 CRUD를 위해 작성해 본 경험이 있습니다.",
-      colors: "#47A248",
-    },
     {
       name: "Illustrator",
       img: "https://jbinyim12.cafe24.com/web/upload/captcha/illustrator-logo.png",
