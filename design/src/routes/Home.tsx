@@ -8,6 +8,7 @@ import Work from "../components/Work";
 import Contact from "../components/Contact";
 import Modal from "../components/Modal";
 import HeaderBtn from "../components/HeaderBtn";
+import Education from "../components/educations/Education";
 import { db } from "../db";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import {

@@ -70,7 +70,7 @@ const Work = () => {
     const handleScroll = () => {
       const currentScroll = window.pageYOffset;
       const exampleTop = exampleRef.current?.offsetTop || 0;
-
+      console.log(currentScroll, exampleTop);
       if (isMobile) {
         setWorkBtn(3837);
       } else {

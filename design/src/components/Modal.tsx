@@ -97,7 +97,7 @@ const TextBox = styled.div`
 
 const Ing = styled.span`
   font-size: 14px;
-  color: rgba(0, 0, 0, 0.7);
+  color: #f00;
 `;
 
 const ProjectText = styled.p`
@@ -128,13 +128,10 @@ const DevImg = styled.div``;
 const DevImgBox = styled.div`
   margin-top: 20px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 15px;
   @media ${(props) => props.theme.m} {
-    grid-template-columns: repeat(2, 2fr);
-  }
-  @media ${(props) => props.theme.s} {
-    grid-template-columns: repeat(1, 2fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 `;
 
@@ -146,7 +143,10 @@ const DevImage = styled.div<{ $imgUrl: string }>`
   background-image: url(${(props) => props.$imgUrl});
   background-position: top;
   background-size: cover;
-  transition: all 1s;
+  transition: all 2s;
+  @media ${(props) => props.theme.s} {
+    height: 200px;
+  }
   &:hover {
     background-position: bottom;
   }
@@ -156,6 +156,17 @@ const Subtitle = styled.span`
   font-size: 25px;
   font-weight: bold;
   margin: 0;
+`;
+
+const DescSkill = styled.p`
+  background: ${(props) => props.theme.textBgColor};
+  padding: 6px;
+  font-weight: 600;
+`;
+
+const DevelopStory = styled.p`
+  font-size: 16px;
+  line-height: 2;
 `;
 
 interface IModal {
@@ -213,12 +224,12 @@ const Modal = ({ clickModal }: IModal) => {
                 <Subtitle>🔦 상세기술</Subtitle>
               </span>
               {clickModal.func?.map((item, idx) => (
-                <p key={idx}>- {item}</p>
+                <DescSkill key={idx}>- {item}</DescSkill>
               ))}
             </SkillBox>
             <MainSkill>
               <Subtitle>📕 개발이야기</Subtitle>
-              <p>{clickModal.text}</p>
+              <DevelopStory>{clickModal.text}</DevelopStory>
             </MainSkill>
           </TextBox>
         </ContentBox>
