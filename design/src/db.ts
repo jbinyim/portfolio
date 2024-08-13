@@ -515,19 +515,19 @@ export interface interviewI {
 export const educationData = [
   {
     day: "2024.08.13",
-    title: "뉴딜과정",
-    name: "수업과정",
-    text: "수업내용",
+    title: "2024년 2차 서울시 민간기업 맞춤형 뉴딜 일자리사업",
+    name: "모던 웹 풀스택 개발자 실무과정",
+    text: "",
     skillImg: [
       "https://jbinyim12.cafe24.com/web/upload/captcha/node-logo.png",
       "https://jbinyim12.cafe24.com/web/upload/captcha/mongodb-logo.png",
     ],
   },
   {
-    day: "2024.06.13",
-    title: "이젠",
-    name: "수업과정",
-    text: "수업내용",
+    day: "2023.12.29 ~ 2024.06.13",
+    title: "이젠아카데미DX교육센터",
+    name: "스마트 웹콘텐츠 프론트엔드 & 퍼블리셔 & UI/UX 디자인_B",
+    text: "",
     skillImg: [
       "https://www.w3.org/html/logo/downloads/HTML5_Badge_512.png",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo.svg/2048px-CSS3_logo.svg.png",
@@ -537,10 +537,10 @@ export const educationData = [
     ],
   },
   {
-    day: "2023.01.13",
-    title: "메가it",
-    name: "수업과정",
-    text: "수업내용",
+    day: "2022.09 ~ 2023.02",
+    title: "메가스터디it아카데미",
+    name: "백엔드",
+    text: "",
     skillImg: [
       "https://cdn.iconscout.com/icon/free/png-256/free-java-logo-icon-download-in-svg-png-gif-file-formats--programming-language-coding-logos-icons-1720088.png?f=webp",
       "https://cdn.iconscout.com/icon/free/png-256/free-mysql-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-company-brand-vol-5-pack-logos-icons-3030165.png",
