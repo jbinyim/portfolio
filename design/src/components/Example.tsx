@@ -4,7 +4,6 @@ import ExampleCardBox from "./ExampleCardBox";
 
 const Section = styled.div`
   padding-top: 100px;
-  margin-bottom: 300px;
 `;
 
 const MenuBox = styled.ul`

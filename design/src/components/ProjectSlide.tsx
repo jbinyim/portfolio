@@ -212,18 +212,6 @@ const ProjectSlide = () => {
     offset = 1;
   }
 
-  // useEffect(() => {
-  //   if (l) {
-  //     setOffset(3);
-  //   } else if (m) {
-  //     setOffset(2);
-  //   } else if (s) {
-  //     setOffset(1);
-  //   } else if (xs) {
-  //     setOffset(1);
-  //   }
-  // }, [l, m, s]);
-
   const onBoxClick = (modalId: number) => {
     history(`/modal/${modalId}`);
   };

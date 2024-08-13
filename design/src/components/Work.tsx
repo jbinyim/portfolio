@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Example from "../components/Example";
 import ProjectSlide from "./ProjectSlide";
 import { useMediaQuery } from "react-responsive";
+import Education from "./educations/Education";
 
 const Container = styled.div`
   width: 100%;
@@ -43,6 +44,13 @@ const ExampleBtn = styled.p<{ $textColor: number }>`
       : "color: rgba(255, 255, 255, 0.2)"};
 `;
 
+const EducationBtn = styled(ProjectBtn)`
+  ${(props) =>
+    props.$textColor === 5888
+      ? "color: rgba(255, 255, 255, 1)"
+      : "color: rgba(255, 255, 255, 0.2)"};
+`;
+
 const ProjectBox = styled.div`
   width: 100%;
   overflow: hidden;
@@ -53,6 +61,7 @@ const Work = () => {
   const [isMobile, setIsMobile] = useState(false);
   const projectRef = useRef<HTMLDivElement>(null);
   const exampleRef = useRef<HTMLDivElement>(null);
+  const educationRef = useRef<HTMLDivElement>(null);
 
   const xs = useMediaQuery({ maxWidth: 400 });
 
@@ -70,14 +79,17 @@ const Work = () => {
     const handleScroll = () => {
       const currentScroll = window.pageYOffset;
       const exampleTop = exampleRef.current?.offsetTop || 0;
-      console.log(currentScroll, exampleTop);
+      const educationTop = educationRef.current?.offsetTop || 0;
+
       if (isMobile) {
         setWorkBtn(3837);
       } else {
         if (currentScroll < exampleTop) {
           setWorkBtn(3837);
-        } else {
+        } else if (currentScroll < educationTop) {
           setWorkBtn(4636);
+        } else {
+          setWorkBtn(5888);
         }
       }
     };
@@ -112,6 +124,15 @@ const Work = () => {
               Example
             </ExampleBtn>
           </SubNav>
+          <SubNav>
+            <EducationBtn
+              className="education"
+              onClick={() => movePage(educationRef)}
+              $textColor={workBtn}
+            >
+              Education
+            </EducationBtn>
+          </SubNav>
         </SubNavBox>
       )}
 
@@ -121,6 +142,9 @@ const Work = () => {
         </div>
         <div ref={exampleRef}>
           <Example />
+        </div>
+        <div ref={educationRef}>
+          <Education />
         </div>
       </ProjectBox>
     </Container>

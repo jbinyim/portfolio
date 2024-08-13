@@ -511,3 +511,40 @@ export interface interviewI {
   q: string;
   a: string;
 }
+
+export const educationData = [
+  {
+    day: "2024.08.13",
+    title: "뉴딜과정",
+    name: "수업과정",
+    text: "수업내용",
+    skillImg: [
+      "https://jbinyim12.cafe24.com/web/upload/captcha/node-logo.png",
+      "https://jbinyim12.cafe24.com/web/upload/captcha/mongodb-logo.png",
+    ],
+  },
+  {
+    day: "2024.06.13",
+    title: "이젠",
+    name: "수업과정",
+    text: "수업내용",
+    skillImg: [
+      "https://www.w3.org/html/logo/downloads/HTML5_Badge_512.png",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo.svg/2048px-CSS3_logo.svg.png",
+      "https://static-00.iconduck.com/assets.00/javascript-icon-512x512-34hjwczx.png",
+      "https://cdn1.iconfinder.com/data/icons/programing-development-8/24/react_logo-512.png",
+      "https://jbinyim12.cafe24.com/web/upload/captcha/Typescript_logo.png",
+    ],
+  },
+  {
+    day: "2023.01.13",
+    title: "메가it",
+    name: "수업과정",
+    text: "수업내용",
+    skillImg: [
+      "https://cdn.iconscout.com/icon/free/png-256/free-java-logo-icon-download-in-svg-png-gif-file-formats--programming-language-coding-logos-icons-1720088.png?f=webp",
+      "https://cdn.iconscout.com/icon/free/png-256/free-mysql-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-company-brand-vol-5-pack-logos-icons-3030165.png",
+      "https://img.icons8.com/?size=512&id=90519&format=png",
+    ],
+  },
+];
