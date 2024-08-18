@@ -52,10 +52,16 @@ const Title = styled.h4`
   font-size: 30px;
   font-weight: bold;
   margin: 15px 0;
+  @media ${(props) => props.theme.m} {
+    font-size: 25px;
+  }
 `;
 
 const Name = styled.p`
   font-size: 20px;
+  @media ${(props) => props.theme.m} {
+    font-size: 18px;
+  }
 `;
 
 const Text = styled.p``;
@@ -65,6 +71,7 @@ const ImgBox = styled.div`
   gap: 15px;
   @media ${(props) => props.theme.m} {
     flex-wrap: wrap;
+    gap: 10px;
   }
 `;
 
@@ -77,6 +84,10 @@ const ImgBg = styled.div`
 const Img = styled.img`
   width: 72px;
   height: 72px;
+  @media ${(props) => props.theme.m} {
+    width: 40px;
+    height: 40px;
+  }
 `;
 
 export const styles = {

@@ -1,29 +1,6 @@
 export const db = {
   project: [
     {
-      id: 240501,
-      type: "react",
-      name: "피파전적",
-      catagory: "2인",
-      skill: ["react", "typescript", "react-query"],
-      day: "2024-05-01 ~ 2024-06-09",
-      func: [
-        "넥슨 오픈 API를 활용해 만들어진 전적검색 사이트입니다.",
-        "react-router-dom을 사용하여 다양한 페이지로의 라우팅을 설정했습니다.",
-        "react-query를 이용하여 실시간 api 값을 가져옵니다.",
-      ],
-      link: "https://fcgg-6ccd7.web.app",
-      github: "https://github.com/jbinyim/fconline-record",
-      imgUrl: [
-        "https://jbinyim12.cafe24.com/web/upload/captcha/image%205.png",
-        "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-xn-iy5bf585f88b-2024-06-10-14_21_38.png",
-        "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-xn-iy5bf585f88b-2024-06-10-13_12_16.png",
-        "https://jbinyim12.cafe24.com/web/upload/captcha/%EA%B2%BD%EA%B8%B0%EC%A0%95%EB%B3%B4.png",
-        "https://jbinyim12.cafe24.com/web/upload/captcha/%EB%9D%BC%EC%9D%B8%EC%97%85.png",
-      ],
-      text: "친구와 함계한 프로젝트이며 웹 개발자라는 꿈을 갖게된 계기로 시작된 게임 전적 검색 사이트입니다. 게임회사에서 지원하는 API를 실시간으로 가져오며 게임플레이를 완료하면 해당 게임에 대한 정보들을 볼 수 있습니다. 회사에서 지원하는 API에는 하루 호출량이 정해져있어 랜더링 관리와 상태관리는데에 어려움이었습니다. 이러한 문제를 Recoil를 이용하여 관리하였습니다. 퍼블리셔 친구와 함께 하다보니 style-components를 사용하지 못 하여 불편함을 겪었으나 다양한 React Hook을 이용하여 해결하였습니다.",
-    },
-    {
       id: 240711,
       type: "react",
       name: "컴패션 클론코딩",
@@ -56,6 +33,29 @@ export const db = {
         "https://jbinyim12.cafe24.com/web/upload/captcha/register.png",
       ],
       text: `js 클론코딩을 통해 많은 것을 배우고 한 단계 더욱 올라갔다는 느낌을 받고 react 클론코딩을 하게되었습니다. 프로젝트 목표는 기능까지 최대한 구현해보자라는 생각으로 시작했습니다.`,
+    },
+    {
+      id: 240501,
+      type: "react",
+      name: "피파전적",
+      catagory: "2인",
+      skill: ["react", "typescript", "react-query"],
+      day: "2024-05-01 ~ 2024-06-09",
+      func: [
+        "넥슨 오픈 API를 활용해 만들어진 전적검색 사이트입니다.",
+        "react-router-dom을 사용하여 다양한 페이지로의 라우팅을 설정했습니다.",
+        "react-query를 이용하여 실시간 api 값을 가져옵니다.",
+      ],
+      link: "https://fcgg-6ccd7.web.app",
+      github: "https://github.com/jbinyim/fconline-record",
+      imgUrl: [
+        "https://jbinyim12.cafe24.com/web/upload/captcha/image%205.png",
+        "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-xn-iy5bf585f88b-2024-06-10-14_21_38.png",
+        "https://jbinyim12.cafe24.com/web/upload/captcha/screencapture-xn-iy5bf585f88b-2024-06-10-13_12_16.png",
+        "https://jbinyim12.cafe24.com/web/upload/captcha/%EA%B2%BD%EA%B8%B0%EC%A0%95%EB%B3%B4.png",
+        "https://jbinyim12.cafe24.com/web/upload/captcha/%EB%9D%BC%EC%9D%B8%EC%97%85.png",
+      ],
+      text: "친구와 함계한 프로젝트이며 웹 개발자라는 꿈을 갖게된 계기로 시작된 게임 전적 검색 사이트입니다. 게임회사에서 지원하는 API를 실시간으로 가져오며 게임플레이를 완료하면 해당 게임에 대한 정보들을 볼 수 있습니다. 회사에서 지원하는 API에는 하루 호출량이 정해져있어 랜더링 관리와 상태관리는데에 어려움이었습니다. 이러한 문제를 Recoil를 이용하여 관리하였습니다. 퍼블리셔 친구와 함께 하다보니 style-components를 사용하지 못 하여 불편함을 겪었으나 다양한 React Hook을 이용하여 해결하였습니다.",
     },
     {
       id: 240805,
@@ -531,7 +531,7 @@ export const educationData = [
     skillImg: [
       "https://www.w3.org/html/logo/downloads/HTML5_Badge_512.png",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo.svg/2048px-CSS3_logo.svg.png",
-      "https://static-00.iconduck.com/assets.00/javascript-icon-512x512-34hjwczx.png",
+      "https://jbinyim12.cafe24.com/web/upload/captcha/javascript-icon.png",
       "https://cdn1.iconfinder.com/data/icons/programing-development-8/24/react_logo-512.png",
       "https://jbinyim12.cafe24.com/web/upload/captcha/Typescript_logo.png",
     ],
