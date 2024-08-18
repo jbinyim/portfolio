@@ -347,7 +347,7 @@ export const skillLogo = {
   common: [
     {
       name: "Html5",
-      img: "https://www.w3.org/html/logo/downloads/HTML5_Badge_512.png",
+      img: "https://jbinyim12.cafe24.com/web/upload/captcha/HTML5_Badge_512.png",
       desc: "웹 표준을 준수하고, 구조에 따라 적절한 시맨틱 태그를 사용하여 마크업 할 수 있습니다",
       colors: "#E44D26",
     },
@@ -359,7 +359,7 @@ export const skillLogo = {
     },
     {
       name: "JavaScript",
-      img: "https://static-00.iconduck.com/assets.00/javascript-icon-512x512-34hjwczx.png",
+      img: "https://jbinyim12.cafe24.com/web/upload/captcha/javascript-icon.png",
       desc: "객체나 배열의 메서드들을 제대로 사용할 수 있습니다. 실행 컨텍스트, 프로토타입, 스코프 등에 대한 개념을 알고 있습니다.",
       colors: "#F7DF1E",
     },
@@ -367,7 +367,7 @@ export const skillLogo = {
   frontend: [
     {
       name: "React.js",
-      img: "https://cdn1.iconfinder.com/data/icons/programing-development-8/24/react_logo-512.png",
+      img: "https://jbinyim12.cafe24.com/web/upload/captcha/react_logo-512.png",
       desc: "JSX, Hook, State, Component 등의 개념에 대해 이해하고 사용할 수 있습니다.",
       colors: "#61DAFB",
     },
@@ -437,7 +437,7 @@ export const skillLogo = {
     },
     {
       name: "Figma",
-      img: "https://cdn4.iconfinder.com/data/icons/logos-brands-in-colors/3000/figma-logo-512.png",
+      img: "https://jbinyim12.cafe24.com/web/upload/captcha/figma-logo-512.png",
       desc: "기본적인 UI 요소를 디자인하고 화면 레이아웃을 구성할 수 있습니다. 다양한 해상도와 디바이스 크기에 맞는 프레임을 설정할 수 있습니다.",
       colors: "#F24E1E",
     },
@@ -457,19 +457,19 @@ export const skillLogo = {
   etc: [
     {
       name: "Java",
-      img: "https://cdn.iconscout.com/icon/free/png-256/free-java-logo-icon-download-in-svg-png-gif-file-formats--programming-language-coding-logos-icons-1720088.png?f=webp",
+      img: "https://jbinyim12.cafe24.com/web/upload/captcha/java.png",
       desc: "",
       colors: "#F8981D",
     },
     {
       name: "MySql",
-      img: "https://cdn.iconscout.com/icon/free/png-256/free-mysql-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-company-brand-vol-5-pack-logos-icons-3030165.png",
+      img: "https://jbinyim12.cafe24.com/web/upload/captcha/mysql.png",
       desc: "",
       colors: "#00758F",
     },
     {
       name: "Spring",
-      img: "https://img.icons8.com/?size=512&id=90519&format=png",
+      img: "https://jbinyim12.cafe24.com/web/upload/captcha/spring.png",
       desc: "",
       colors: "#6DB33F",
     },
@@ -492,7 +492,7 @@ export const interviewDb = [
   {
     id: 1,
     q: "프론트엔드로 지원한 이유?",
-    a: "친구와 함께 하던 게임의 기존 전적 검색 사이트가 운영을 종료하자 불편을 크게 느꼈습니다. 이로 인해 우리가 직접 만들어보자는 생각이 떠올라서 전적을 검색하기 위한 사이트를 만들어 보기로 하였습니다. 처음에는 웹에 관련하여 아무것도 몰랐기 때문에 많은 어려움을 겪었지만 주변 지인의 도움과 다양한 자료조사를 통해 사이트를 운영하게 되었습니다. 이때 저는 다양한 기능들을 내가 원하는 데로 구현하는 것을 보고 본격적으로 웹에 관심을 가지게 되었습니다. 학원을 통해 웹에 대한 기본적인 지식을 학습하면서 기능을 간단하게 구현해 보고 그것을 사용해 본 주변 지인들의 긍정적인 반응을 보고 흥미와 자신감을 느껴서 더욱 열심히 배울 수 있었습니다. 프론트엔드 개발자로서 사용자가 원활한 서비스를 경험하고, 안정적으로 데이터를 출력할 수 있도록 하는 것이 제 역할이라고 생각합니다. 또한, 프론트엔드 개발은 끊임없이 발전하고 변화하는 분야이며, 새로운 기술과 도구들이 등장하고 있습니다. 이러한 환경에서 저도 새로운 도전과 지속적인 성장을 이루어내는 것이 프론트엔드 개발자로서의 목표입니다.",
+    a: "어릴 적, 친구와 함께 즐겼던 게임 전적 검색 사이트가 갑자기 서비스가 종료되는 경험을 하였습니다. 그때 느꼈던 아쉬움과 함께, '이런 사이트를 직접 만들어볼 수는 없을까?'라는 생각이 들었습니다. 그래서 친구와 협력하여 나만의 게임 전적 검색 사이트를 만들기로 결심했습니다. 처음에는 개발에 대한 지식이 부족해 제대로 만들기 어려웠습니다. 그래서 다른 플랫폼을 이용해 간단한 웹 페이지를 제작하며 기본적인 구조와 디자인을 익혔습니다. 하지만 더 깊이 있는 기술을 배우고 싶다는 열망이 커지면서, 결국 프론트엔드 개발을 전문적으로 배우기 위해 학원을 다니기로 결정했습니다. 학원에서는 HTML, CSS, JavaScript뿐만 아니라 프레임워크와 라이브러리, 웹 개발의 전반적인 흐름에 대해 체계적으로 배울 수 있었습니다. 다양한 프로젝트를 경험하며 실제로 웹 애플리케이션을 만드는 과정에서 실력을 쌓을 수 있었고, 특히 팀 프로젝트를 통해 협업의 중요성과 문제 해결 능력을 더욱 키울 수 있었습니다. 이러한 경험들은 저에게 프론트엔드 개발의 매력을 더욱 깊게 깨닫게 해주었고, 사용자 친화적인 웹 애플리케이션을 만드는 데 대한 열정을 키우게 되었습니다. 앞으로도 이러한 경험을 바탕으로 더욱 발전하며, 사용자들이 편리하게 정보를 찾고 소통할 수 있는 플랫폼을 구축하는 데 기여하고 싶습니다.",
   },
   {
     id: 2,

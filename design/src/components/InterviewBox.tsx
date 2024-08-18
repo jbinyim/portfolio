@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, ReactNode } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
@@ -28,16 +28,20 @@ const Title = styled.h2`
 const Text = styled(motion.p)<{ $toggle: boolean }>`
   margin-top: 30px;
   font-size: 16px;
-  line-height: 1.5rem;
+  line-height: 2;
   display: ${(props) => (props.$toggle ? "block" : "none")};
+  span {
+    background: #000;
+    font-weight: bold;
+  }
 `;
 
 interface IInterviewBox {
   q: string;
-  a: string;
+  a: ReactNode;
 }
 
-const InterviewBox = ({ q, a }: IInterviewBox) => {
+const InterviewBox: React.FC<IInterviewBox> = ({ q, a }) => {
   const [toggle, setToggle] = useState(false);
 
   const onClickToggle = () => {

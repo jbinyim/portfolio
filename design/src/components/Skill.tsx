@@ -4,7 +4,7 @@ import SkillCard from "./SkillCard";
 
 const Container = styled.div`
   max-width: 1070px;
-  margin: 90px auto 0;
+  margin: 180px auto 0;
 `;
 
 const Title = styled.div`
